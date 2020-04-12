@@ -1,4 +1,3 @@
-import React from "react";
 import brandLady from "../../assets/images/brandLady.png";
 import { css, jsx } from "@emotion/core";
 /** @jsx jsx */

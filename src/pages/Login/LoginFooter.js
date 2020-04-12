@@ -6,15 +6,30 @@ import { css, jsx } from "@emotion/core";
 export default function LoginFooter() {
   return (
     <div css={styles.footerParent}>
-      <a target="_blank" href="https://cyberaware.com/" css={styles.footerLink}>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://cyberaware.com/"
+        css={styles.footerLink}
+      >
         Risk Assessment & Reporting
       </a>
       <span css={styles.footerLinkSpacer}>|</span>
-      <a target="_blank" href="https://cyberaware.com/" css={styles.footerLink}>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://cyberaware.com/"
+        css={styles.footerLink}
+      >
         Awareness Training & Phishing
       </a>
       <span css={styles.footerLinkSpacer}>|</span>
-      <a target="_blank" href="https://cyberaware.com/" css={styles.footerLink}>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://cyberaware.com/"
+        css={styles.footerLink}
+      >
         Cyber Awareness Material
       </a>
     </div>

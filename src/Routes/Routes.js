@@ -2,11 +2,11 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router";
 // import { StyleGuide } from "pages/StyleGuide";
 import Login from "../pages/Login/Login";
-import { Home } from "../pages/Home";
-import { PhishingSimulations } from "../pages/PhishingSimulations";
+import Home from "../pages/Home";
+import PhishingSimulations from "../pages/PhishingSimulations";
 
 export const Routes = () => {
-  const userLoggedIn = false;
+  const userLoggedIn = true;
   if (!userLoggedIn) {
     return (
       <Switch>

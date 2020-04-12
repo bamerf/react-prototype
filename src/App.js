@@ -3,7 +3,7 @@ import { colors } from "./data/colors";
 import {
   createMuiTheme,
   ThemeProvider,
-  ThemeOptions,
+  // ThemeOptions,
   CircularProgress,
   makeStyles,
   fade,

@@ -1,19 +1,38 @@
 import React from "react";
-import { Typography, Link, makeStyles } from "@material-ui/core";
+import { Typography, makeStyles } from "@material-ui/core";
 import BrandLogo from "../../components/BrandAssests/BrandLogo";
 import LoginLady from "../../components/BrandAssests/LoginLady";
 import LoginForm from "./LoginForm";
 import LoginFooter from "../Login/LoginFooter";
 import { rem } from "../../helpers/style";
-import { css, jsx } from "@emotion/core";
-/** @jsx jsx */
+
+const useStyles = makeStyles(
+  {
+    welcome: {
+      marginTop: rem(56.23),
+      marginLeft: rem(88),
+      "& span": {
+        fontWeight: "bold",
+      },
+    },
+    brandLogo: {
+      width: rem(420),
+      height: rem(53),
+      marginTop: rem(80),
+      marginLeft: rem(88),
+    },
+  },
+  { name: "Login" }
+);
 
 export default function Login() {
+  const styles = useStyles();
+
   return (
     <div>
-      <BrandLogo type="logo" />
+      <BrandLogo className={styles.brandLogo} />
       <LoginLady />
-      <Typography variant="h1" css={styles.welcome}>
+      <Typography variant="h1" className={styles.welcome}>
         Welcome to{" "}
         <span>
           Cyber Aware <br />
@@ -25,13 +44,3 @@ export default function Login() {
     </div>
   );
 }
-
-const styles = {
-  welcome: css`
-    margin-top: ${rem(56.23)};
-    margin-left: ${rem(88)};
-    span {
-      font-weight: bold;
-    }
-  `,
-};

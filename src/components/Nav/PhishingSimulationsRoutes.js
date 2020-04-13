@@ -35,6 +35,8 @@ export const phishingSimulationsRouteToName = (route) => {
       return "Reports";
     case phishingSimulationsRoutes.Settings:
       return "Settings";
+    default:
+      return null;
   }
 };
 
@@ -54,6 +56,8 @@ export const phishingSimulationsRouteToComponent = (route) => {
       return React.Fragment;
     case phishingSimulationsRoutes.Settings:
       return React.Fragment;
+    default:
+      return null;
   }
 };
 
@@ -73,5 +77,7 @@ export const phishingSimulationsRouteToIcon = (route) => {
       return DescriptionIcon;
     case phishingSimulationsRoutes.Settings:
       return TuneIcon;
+    default:
+      return null;
   }
 };

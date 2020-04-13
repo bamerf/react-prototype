@@ -46,7 +46,7 @@ export default function HeaderNav() {
           <Typography variant="h6" className={styles.linkText} key={index}>
             {link}
           </Typography>
-          <KeyboardArrowDownIcon className={styles.arrow} />
+          <KeyboardArrowDownIcon className={styles.arrow} key={index - 1} />
         </div>
       ))}
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 import CampaignActivity from "../CampaignActivity/CampaignActivity";
+import Chart from "../Chart/Chart";
 
 const useStyles = makeStyles({
   campaignActivity: {
@@ -15,6 +16,7 @@ export default function Campaigns() {
 
   return (
     <div>
+      <Chart />
       <CampaignActivity
         className={styles.campaignActivity}
         title="Dropbox - File"

@@ -1,5 +1,6 @@
 import React from "react";
-import { makeStyles, Typography, fade } from "@material-ui/core";
+import { makeStyles, Typography, fade, useTheme } from "@material-ui/core";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import { colors } from "../../data/colors";
 import { rem } from "../../helpers/style";
 
@@ -9,9 +10,6 @@ const useStyles = makeStyles(
       width: rem(100),
       height: rem(100),
       borderRadius: "50%",
-      backgroundColor: dark
-        ? fade(theme.palette.primary.main, 0.1)
-        : fade(colors.white, 0.1),
       position: "relative",
       marginBottom: rem(16),
     }),
@@ -30,18 +28,39 @@ const useStyles = makeStyles(
       lineHeight: 1,
       textAlign: "center",
     }),
+    progressUnderLayer: {
+      color: fade(colors.gray6, 0.5),
+      position: "absolute",
+      right: rem(0),
+    },
+    svg: {
+      strokeLinecap: "round",
+    },
   }),
   { name: "PercentCircle" }
 );
 
 export const PercentCircle = (props) => {
   const styles = useStyles(props);
+  const theme = useTheme();
 
   const { percentage, title, className } = props;
 
   return (
     <div className={className}>
       <div className={styles.circle}>
+        <CircularProgress
+          variant="static"
+          value={100}
+          size={100}
+          className={styles.progressUnderLayer}
+        />
+        <CircularProgress
+          variant="static"
+          value={75}
+          size={100}
+          className={styles.svg}
+        />
         <Typography variant="body1" className={styles.text}>
           {percentage}%
         </Typography>

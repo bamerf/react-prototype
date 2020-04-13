@@ -130,6 +130,7 @@ const staticThemeProperties = {
 
 function App() {
   const styles = useStyles();
+  // const brandColor = "#009ae4";
   const brandColor = "";
   const brandRequestSuccess = true;
 

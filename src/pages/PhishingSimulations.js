@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Grid, makeStyles } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import { Route, Redirect, Switch } from "react-router-dom";
 import Page from "../components/Page/Page";
 import Header from "../components/Header/Header";
@@ -10,11 +10,15 @@ import {
   phishingSimulationsRouteToComponent,
   phishingSimulationsRoutes,
 } from "../components/Nav/PhishingSimulationsRoutes";
+import { rem } from "../helpers/style";
+import className from "classnames";
 
 const useStyles = makeStyles(
   {
     content: {
-      padding: "40px 30px",
+      paddingTop: rem(32),
+      paddingLeft: rem(65),
+      paddingRight: rem(67),
     },
     title: {
       marginBottom: 10,
@@ -25,6 +29,7 @@ const useStyles = makeStyles(
       lineHeight: "26px",
     },
     mainContent: {},
+    section: {},
   },
   { name: "PhishingSimulations" }
 );
@@ -41,7 +46,12 @@ export default function PhishingSimulations({ match }) {
           <Grid item xs={12} md={3}>
             <PhishingSimulationsNav />
           </Grid>
-          <Grid item xs={12} md={9} className="aaa">
+          <Grid
+            item
+            xs={12}
+            md={9}
+            className={className("aaa", styles.section)}
+          >
             <Switch>
               {Object.values(phishingSimulationsRoutes).map((route) => (
                 <Route

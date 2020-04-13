@@ -22,9 +22,9 @@ const useStyles = makeStyles(
       lineHeight: "26px",
     },
     woman: {
-      position: "absolute",
-      top: rem(98),
-      right: rem(213),
+      position: "relative",
+      top: "-1.875rem",
+      right: "-9.6875rem",
       zIndex: 0,
     },
   },

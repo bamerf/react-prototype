@@ -10,7 +10,7 @@ const useStyles = makeStyles(
   (theme) => ({
     root: {
       minHeight: "100%",
-      padding: rem(24),
+      padding: `${rem(28)} ${rem(50)}`,
       textAlign: "center",
       display: "flex",
       flexDirection: "column",

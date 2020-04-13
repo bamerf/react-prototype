@@ -1,14 +1,14 @@
 import React from "react";
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Typography, fade } from "@material-ui/core";
 import { colors } from "../../data/colors";
 import { rem } from "../../helpers/style";
 
 const useStyles = makeStyles(
   {
     circle: {
-      width: rem(100),
-      height: rem(100),
-      backgroundColor: colors.gray6,
+      width: rem(120),
+      height: rem(120),
+      backgroundColor: fade(colors.gray6, 0.5),
       borderRadius: "50%",
       position: "relative",
       marginBottom: rem(16),

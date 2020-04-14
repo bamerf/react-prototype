@@ -13,7 +13,7 @@ import {
   rem,
 } from "../../helpers/style";
 
-const paddingVertical = 25;
+const paddingVertical = 20;
 const transitionTimeMs = 300;
 
 const useStyles = makeStyles(
@@ -38,11 +38,11 @@ const useStyles = makeStyles(
         boxShadow: boxShadowOn,
         backgroundColor: fade(colors.gray6, 1),
       },
-      [theme.breakpoints.up("lg")]: {
-        padding: `${rem(paddingVertical - borderTopSize)} ${rem(22)} ${rem(
-          paddingVertical
-        )}`,
-      },
+      // [theme.breakpoints.up("lg")]: {
+      //   padding: `${rem(paddingVertical - borderTopSize)} ${rem(22)} ${rem(
+      //     paddingVertical
+      //   )}`,
+      // },
     },
     icon: {
       color: colors.gray4,
@@ -52,19 +52,19 @@ const useStyles = makeStyles(
       height: rem(26),
       [theme.breakpoints.up("lg")]: {
         marginRight: rem(22),
-        width: rem(35),
-        height: rem(35),
+        width: rem(30),
+        height: rem(30),
       },
     },
     text: {
       transition: `color ${transitionTimeMs}ms`,
       marginRight: rem(8),
-      fontSize: rem(16),
+      fontSize: rem(14),
       color: colors.gray3,
       fontWeight: 500,
       [theme.breakpoints.up("lg")]: {
         marginRight: rem(22),
-        fontSize: rem(18),
+        fontSize: rem(14),
       },
     },
     chevron: {
@@ -97,7 +97,7 @@ export const TabLinkButton = ({ to, text, Icon, className }) => {
       exact={true}
     >
       <Icon className={styles.icon} color="primary" fontSize="large" />
-      <Typography variant="body1" className={styles.text}>
+      <Typography variant="body2" className={styles.text}>
         {text}
       </Typography>
       <ChevronRightIcon className={styles.chevron} />

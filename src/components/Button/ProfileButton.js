@@ -8,12 +8,12 @@ const useStyles = makeStyles(
     root: {
       width: 56,
       height: 56,
+      marginRight: rem(30),
       backgroundColor: theme.palette.primary.main,
       position: "relative",
       borderRadius: "50%",
       display: "inline-block",
       marginLeft: "auto",
-      marginRight: rem(60),
       cursor: "pointer",
     },
     text: {

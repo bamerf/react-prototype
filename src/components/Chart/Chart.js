@@ -15,7 +15,6 @@ import { colors } from "../../data/colors";
 
 const useStyles = makeStyles(
   () => ({
-    root: {},
     chartContainer: {
       marginBottom: rem(41),
       width: "100%",
@@ -28,6 +27,9 @@ const useStyles = makeStyles(
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+    },
+    chartText: {
+      fontSize: 14,
     },
   }),
   { name: "Chart" }

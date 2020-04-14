@@ -19,7 +19,7 @@ export default function Campaigns() {
       <Chart />
       <CampaignActivity
         className={styles.campaignActivity}
-        title="Dropbox - File"
+        title="Dropbox - File shared"
         subject="Jonathan Horne - Dropbox shared file"
         fromAdress="Jonathan Horne"
         sendingGroup="Default (All users)"

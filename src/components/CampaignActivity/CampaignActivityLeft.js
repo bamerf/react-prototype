@@ -11,6 +11,7 @@ const useStyles = makeStyles(
     root: {
       minHeight: "100%",
       padding: `${rem(28)} ${rem(50)}`,
+      paddingTop: rem(35),
       textAlign: "center",
       display: "flex",
       flexDirection: "column",
@@ -33,7 +34,7 @@ const useStyles = makeStyles(
     title: {
       textTransform: "capitalize",
       color: "inherit",
-      fontWeight: 700,
+      fontWeight: 600,
       lineHeight: 1,
     },
     dateCompleted: {
@@ -56,7 +57,7 @@ export default function CampaignActivityLeft(props) {
         isCompleted ? styles.rootCompleted : styles.rootScheduled
       )}
     >
-      <Typography variant="h4" className={styles.title}>
+      <Typography variant="h5" className={styles.title}>
         {isCompleted ? "completed" : "scheduled"}
       </Typography>
       {props.type === "completed" && (

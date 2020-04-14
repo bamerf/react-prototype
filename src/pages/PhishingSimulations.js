@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, makeStyles } from "@material-ui/core";
+import { Grid, makeStyles, Container } from "@material-ui/core";
 import { Route, Redirect, Switch } from "react-router-dom";
 import Page from "../components/Page/Page";
 import Header from "../components/Header/Header";
@@ -16,9 +16,9 @@ import className from "classnames";
 const useStyles = makeStyles(
   {
     content: {
-      paddingTop: rem(32),
-      paddingLeft: rem(65),
-      paddingRight: rem(67),
+      paddingTop: rem(12),
+      paddingLeft: rem(20),
+      paddingRight: rem(20),
     },
     title: {
       marginBottom: 10,
@@ -40,35 +40,37 @@ export default function PhishingSimulations({ match }) {
   return (
     <Page>
       <Header />
-      <Banner />
-      <div className={styles.content}>
-        <Grid container className={styles.mainContent} spacing={3}>
-          <Grid item xs={12} md={3}>
-            <PhishingSimulationsNav />
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            md={9}
-            className={className("aaa", styles.section)}
-          >
-            <Switch>
-              {Object.values(phishingSimulationsRoutes).map((route) => (
-                <Route
-                  key={route}
-                  path={`${match.url}/${route}`}
-                  component={phishingSimulationsRouteToComponent(route)}
+      <Container style={{ maxWidth: rem(1140), backgroundColor: "lightgrey" }}>
+        <Banner />
+        <div className={styles.content}>
+          <Grid container className={styles.mainContent} spacing={3}>
+            <Grid item xs={13} md={3}>
+              <PhishingSimulationsNav />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={9}
+              className={className("aaa", styles.section)}
+            >
+              <Switch>
+                {Object.values(phishingSimulationsRoutes).map((route) => (
+                  <Route
+                    key={route}
+                    path={`${match.url}/${route}`}
+                    component={phishingSimulationsRouteToComponent(route)}
+                  />
+                ))}
+                <Redirect
+                  to={`${match.url}/${
+                    Object.values(phishingSimulationsRoutes)[0]
+                  }`}
                 />
-              ))}
-              <Redirect
-                to={`${match.url}/${
-                  Object.values(phishingSimulationsRoutes)[0]
-                }`}
-              />
-            </Switch>
+              </Switch>
+            </Grid>
           </Grid>
-        </Grid>
-      </div>
+        </div>
+      </Container>
     </Page>
   );
 }

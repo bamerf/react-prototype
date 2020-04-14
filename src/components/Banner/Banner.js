@@ -8,9 +8,10 @@ const useStyles = makeStyles(
   {
     root: {
       display: "flex",
+      maxWidth: rem(1140),
     },
     textRoot: {
-      marginLeft: rem(65),
+      marginLeft: rem(20),
       marginTop: rem(73),
     },
     title: {
@@ -22,9 +23,10 @@ const useStyles = makeStyles(
       lineHeight: "26px",
     },
     woman: {
+      width: rem(350),
       position: "relative",
-      top: "-1.875rem",
-      right: "-9.6875rem",
+      top: "-1.60rem",
+      right: "1.3125rem",
       zIndex: 0,
     },
   },
@@ -36,10 +38,10 @@ export default function Banner() {
   return (
     <div className={styles.root}>
       <div className={styles.textRoot}>
-        <Typography className={styles.title} variant="h1">
+        <Typography className={styles.title} variant="h2">
           Welcome to <b>Phishing Simulations</b>
         </Typography>
-        <Typography className={styles.description} variant="body1">
+        <Typography className={styles.description} variant="body2">
           Below is a summary of phishing campaigns that our team has put
           together, to match your particular needs.
           <br />

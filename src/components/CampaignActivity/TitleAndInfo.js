@@ -11,6 +11,9 @@ const useStyles = makeStyles(
       lineHeight: 1.4,
       marginBottom: rem(4),
     },
+    info: {
+      color: colors.gray3,
+    },
   },
   { name: "TitleAndInfo" }
 );
@@ -20,7 +23,7 @@ export const TitleAndInfo = ({ title, info, className }) => {
 
   return (
     <Typography variant="body2" className={classnames(styles.root, className)}>
-      <b>{title}:</b> {info}
+      <b>{title}:</b> <span className={styles.info}>{info}</span>
     </Typography>
   );
 };

@@ -6,8 +6,8 @@ import { rem } from "../../helpers/style";
 const useStyles = makeStyles(
   {
     circle: {
-      width: rem(120),
-      height: rem(120),
+      width: rem(100),
+      height: rem(100),
       backgroundColor: fade(colors.gray6, 0.5),
       borderRadius: "50%",
       position: "relative",

@@ -8,24 +8,25 @@ import classname from "classnames";
 const useStyles = makeStyles(
   (theme) => ({
     circle: ({ dark }) => ({
-      width: rem(100),
-      height: rem(100),
+      width: rem(75),
+      height: rem(75),
       borderRadius: "50%",
       position: "relative",
       marginBottom: rem(16),
     }),
     text: ({ dark }) => ({
-      fontSize: rem(22),
+      fontSize: rem(18),
       fontWeight: 600,
       color: dark ? colors.gray1 : colors.white,
       position: "absolute",
-      top: "50%",
+      top: "49%",
       left: "53%",
       transform: "translate(-50%, -50%)",
     }),
     title: ({ dark }) => ({
       color: dark ? colors.gray2 : colors.white,
       fontWeight: 500,
+      fontSize: rem(12),
       lineHeight: 1,
       textAlign: "center",
     }),
@@ -76,7 +77,7 @@ export const PercentCircle = (props) => {
         <CircularProgress
           variant="static"
           value={100}
-          size={100}
+          size={75}
           className={classname(
             styles.progressUnderLayer,
             getCircleType(`${title} under`)
@@ -85,14 +86,14 @@ export const PercentCircle = (props) => {
         <CircularProgress
           variant="static"
           value={percentage}
-          size={100}
+          size={75}
           className={classname(styles.svg, getCircleType(title))}
         />
         <Typography variant="body2" className={styles.text}>
           {percentage}%
         </Typography>
       </div>
-      <Typography variant="body1" className={styles.title}>
+      <Typography variant="body2" className={styles.title}>
         {title}
       </Typography>
     </div>

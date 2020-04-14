@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles, Typography } from "@material-ui/core";
+import { rem } from "../../helpers/style";
 import classnames from "classnames";
 
 const useStyles = makeStyles(
@@ -9,7 +10,8 @@ const useStyles = makeStyles(
       alignItems: "center",
     },
     label: {
-      marginRight: 8,
+      marginRight: 4,
+      fontSize: rem(12),
     },
   },
   { name: "LabelAndIcon" }

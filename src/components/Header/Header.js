@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 import BrandLogo from "../BrandAssests/BrandLogo";
-import HeaderNav from "../Nav/HeaderNav";
+// import HeaderNav from "../Nav/HeaderNav";
 import ProfileButton from "../Button/ProfileButton";
 import { colors } from "../../data/colors";
 import { rem } from "../../helpers/style";

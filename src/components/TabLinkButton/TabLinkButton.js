@@ -50,10 +50,11 @@ const useStyles = makeStyles(
       marginRight: rem(8),
       width: rem(26),
       height: rem(26),
+      marginTop: rem(1),
       [theme.breakpoints.up("lg")]: {
         marginRight: rem(22),
-        width: rem(30),
-        height: rem(30),
+        width: rem(25),
+        height: rem(25),
       },
     },
     text: {

@@ -7,14 +7,13 @@ import { rem } from "../../helpers/style";
 const useStyles = makeStyles(
   {
     root: {
-      borderRadius: 8,
+      borderRadius: 5,
       paddingTop: rem(9),
       paddingBottom: rem(9),
     },
     label: {
       textTransform: "none",
-      fontWeight: 700,
-      fontSize: rem(16),
+      fontWeight: 600,
       color: colors.white,
       lineHeight: 1.2,
     },

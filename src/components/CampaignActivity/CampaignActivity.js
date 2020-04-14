@@ -5,7 +5,7 @@ import CampaignActivityLeft from "./CampaignActivityLeft";
 import CampaignActivityRight from "./CampaignActivityRight";
 import { colors } from "../../data/colors";
 import { createBemFn } from "../../helpers/bem";
-import { boxShadowOn, rem } from "../../helpers/style";
+import { boxShadowOn } from "../../helpers/style";
 
 const bem = createBemFn("campaign-activity");
 
@@ -13,7 +13,6 @@ const useStyles = makeStyles(
   {
     root: {
       width: "100%",
-      minHeight: rem(285),
       backgroundColor: colors.white,
       borderRadius: 4,
       boxShadow: boxShadowOn,

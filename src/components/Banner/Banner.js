@@ -23,7 +23,7 @@ const useStyles = makeStyles(
       lineHeight: "26px",
     },
     woman: {
-      width: rem(350),
+      width: rem(330),
       position: "relative",
       top: "-1.60rem",
       right: "1.3125rem",
@@ -38,7 +38,7 @@ export default function Banner() {
   return (
     <div className={styles.root}>
       <div className={styles.textRoot}>
-        <Typography className={styles.title} variant="h2">
+        <Typography className={styles.title} variant="h3">
           Welcome to <b>Phishing Simulations</b>
         </Typography>
         <Typography className={styles.description} variant="body2">

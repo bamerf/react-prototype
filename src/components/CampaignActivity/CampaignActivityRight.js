@@ -13,6 +13,7 @@ import { PercentCircle } from "../PercentCircle/PercentCircle";
 import { TitleAndInfo } from "./TitleAndInfo";
 import { LabelAndIcon } from "./LabelAndIcon";
 import { rem } from "../../helpers/style";
+import classname from "classnames";
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -29,16 +30,22 @@ const useStyles = makeStyles(
     },
     phishingIcon: {
       marginRight: rem(16),
+      fontSize: rem(26),
+    },
+    buttonIcon: {
+      fontSize: rem(20),
     },
     title: {
       marginRight: rem(10),
       lineHeight: 1,
+      fontWeight: 500,
     },
     previewButton: {
       marginLeft: "auto",
       marginRight: rem(12),
     },
     viewResultsButton: {},
+
     divider: {
       margin: `${rem(18)} 0`,
     },
@@ -82,17 +89,25 @@ const useStyles = makeStyles(
     },
     trackingStatusIcon: {
       color: colors.gray5,
+      fontSize: rem(18),
     },
     openIcon: {
       color: fade(colors.gray5, 0.5),
+      fontSize: rem(18),
     },
     clickIcon: {
       color: theme.palette.primary.light,
+      fontSize: rem(18),
     },
     attachmentIcon: {
       color: theme.palette.primary.main,
+      fontSize: rem(18),
+    },
+    sendIcon: {
+      fontSize: rem(18),
     },
     bottomButton: {
+      fontSize: rem(13),
       marginLeft: "auto",
       "& svg": {
         color: theme.palette.primary.main,
@@ -109,21 +124,23 @@ export default function CampaignActivityRight(props) {
     <div className={styles.root}>
       <div className={styles.top}>
         <PhishingIcon className={styles.phishingIcon} fontSize="large" />
-        <Typography variant="h4" className={styles.title}>
+        <Typography variant="h5" className={styles.title}>
           {props.title}
         </Typography>
         <Button
           kind="secondary"
-          className={styles.previewButton}
+          className={classname(styles.previewButton)}
           startIcon={<VisibilityIcon />}
+          size="small"
         >
           Preview
         </Button>
         {props.type === "completed" ? (
           <Button
             kind="secondary"
-            className={styles.viewResultsButton}
+            className={classname(styles.text)}
             startIcon={<DescriptionIcon />}
+            size="small"
           >
             View results
           </Button>
@@ -185,7 +202,7 @@ export default function CampaignActivityRight(props) {
             <Button
               kind="secondary"
               className={styles.bottomButton}
-              startIcon={<SendIcon />}
+              startIcon={<SendIcon className={styles.sendIcon} size="small" />}
             >
               Send test email
             </Button>

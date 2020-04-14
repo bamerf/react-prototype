@@ -120,7 +120,7 @@ const staticThemeProperties = {
     MuiButton: {
       iconSizeMedium: {
         "& > *:first-child": {
-          fontSize: rem(24),
+          fontSize: rem(18),
         },
       },
     },

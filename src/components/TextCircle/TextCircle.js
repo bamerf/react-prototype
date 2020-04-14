@@ -6,16 +6,16 @@ import { rem } from "../../helpers/style";
 const useStyles = makeStyles(
   {
     circle: {
-      width: rem(100),
-      height: rem(100),
-      backgroundColor: fade(colors.gray6, 0.5),
+      width: rem(75),
+      height: rem(75),
+      backgroundColor: colors.gray6,
       borderRadius: "50%",
       position: "relative",
       marginBottom: rem(16),
     },
     text: {
-      fontSize: rem(32),
-      fontWeight: 700,
+      fontSize: rem(18),
+      fontWeight: 600,
       position: "absolute",
       top: "50%",
       left: "50%",
@@ -24,6 +24,7 @@ const useStyles = makeStyles(
     },
     title: {
       color: colors.gray2,
+      fontSize: rem(12),
       fontWeight: 500,
       lineHeight: 1,
       textAlign: "center",
@@ -38,7 +39,7 @@ export const TextCircle = ({ text, title, className }) => {
   return (
     <div className={className}>
       <div className={styles.circle}>
-        <Typography variant="body1" className={styles.text}>
+        <Typography variant="body2" className={styles.text}>
           {text}
         </Typography>
       </div>

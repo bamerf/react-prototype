@@ -11,7 +11,7 @@ const useStyles = makeStyles(
       maxWidth: rem(1140),
     },
     textRoot: {
-      marginLeft: rem(20),
+      marginLeft: rem(40),
       marginTop: rem(73),
     },
     title: {
@@ -26,7 +26,7 @@ const useStyles = makeStyles(
       width: rem(330),
       position: "relative",
       top: "-1.60rem",
-      right: "1.3125rem",
+      right: `-${rem(200)}`,
       zIndex: 0,
     },
   },

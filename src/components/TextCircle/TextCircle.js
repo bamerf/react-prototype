@@ -3,11 +3,13 @@ import { makeStyles, Typography } from "@material-ui/core";
 import { colors } from "../../data/colors";
 import { rem } from "../../helpers/style";
 
+const circleRadiusSize = 90;
+
 const useStyles = makeStyles(
   {
     circle: {
-      width: rem(75),
-      height: rem(75),
+      width: rem(circleRadiusSize),
+      height: rem(circleRadiusSize),
       backgroundColor: colors.gray6,
       borderRadius: "50%",
       position: "relative",

@@ -40,7 +40,7 @@ export default function PhishingSimulations({ match }) {
   return (
     <Page>
       <Header />
-      <Container style={{ maxWidth: rem(1140) }}>
+      <Container style={{ maxWidth: rem(1400), backgroundColor: "lightgrey" }}>
         <Banner />
         <div className={styles.content}>
           <Grid container className={styles.mainContent} spacing={3}>

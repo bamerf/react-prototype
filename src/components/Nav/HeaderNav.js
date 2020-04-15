@@ -7,7 +7,7 @@ const useStyles = makeStyles(
   (theme) => ({
     root: {
       display: "flex",
-      marginLeft: rem(130),
+      marginLeft: rem(240),
       width: "60%",
       justifyContent: "space-evenly",
     },

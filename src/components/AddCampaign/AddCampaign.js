@@ -151,17 +151,17 @@ export default function AddCampaign() {
                     type="text"
                     variant="outlined"
                     fullWidth
-                    placeholder="Name"
+                    label="Name"
                   />
                 </InputLabel>
               </Grid>
               <Grid item xs={4}>
                 <InputLabel label="Email subject">
                   <TextField
+                    label="Subject"
                     type="text"
                     variant="outlined"
                     fullWidth
-                    placeholder="Subject"
                   />
                 </InputLabel>
               </Grid>
@@ -199,7 +199,7 @@ export default function AddCampaign() {
                       type="text"
                       variant="outlined"
                       fullWidth
-                      placeholder="File name"
+                      label="File name"
                     />
                   </InputLabel>
                 </Grid>

@@ -5,11 +5,13 @@ import { colors } from "../../data/colors";
 import { rem } from "../../helpers/style";
 import classname from "classnames";
 
+const circleRadiusSize = 90;
+
 const useStyles = makeStyles(
   (theme) => ({
     circle: ({ dark }) => ({
-      width: rem(75),
-      height: rem(75),
+      width: rem(circleRadiusSize),
+      height: rem(circleRadiusSize),
       borderRadius: "50%",
       position: "relative",
       marginBottom: rem(16),
@@ -77,7 +79,7 @@ export const PercentCircle = (props) => {
         <CircularProgress
           variant="static"
           value={100}
-          size={75}
+          size={circleRadiusSize}
           className={classname(
             styles.progressUnderLayer,
             getCircleType(`${title} under`)
@@ -86,7 +88,7 @@ export const PercentCircle = (props) => {
         <CircularProgress
           variant="static"
           value={percentage}
-          size={75}
+          size={circleRadiusSize}
           className={classname(styles.svg, getCircleType(title))}
         />
         <Typography variant="body2" className={styles.text}>

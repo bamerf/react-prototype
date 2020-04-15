@@ -16,14 +16,14 @@ const useStyles = makeStyles(
       backgroundColor: colors.white,
     },
     container: {
-      maxWidth: rem(1140),
+      maxWidth: rem(1400),
       width: "inherit",
       display: "flex",
       alignItems: "center",
     },
     brandLogo: {
       width: rem(200),
-      marginLeft: rem(30),
+      marginLeft: rem(50),
     },
   },
   { name: "Header" }

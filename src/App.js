@@ -105,6 +105,14 @@ const staticThemeProperties = {
     MuiOutlinedInput: {
       input: {
         padding: rem(14),
+        fontSize: rem(14),
+      },
+    },
+    MuiInputLabel: {
+      outlined: {
+        fontSize: rem(14),
+        transform: "translate(14px, 16px) scale(1)",
+        color: colors.gray4,
       },
     },
     MuiDivider: {

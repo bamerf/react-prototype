@@ -1,29 +1,18 @@
 import React from "react";
-import { Typography, makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
+import Avatar from "@material-ui/core/Avatar";
 import { colors } from "../../data/colors";
 import { rem } from "../../helpers/style";
 
 const useStyles = makeStyles(
   (theme) => ({
-    root: {
+    text: {
       width: 56,
       height: 56,
-      marginRight: rem(30),
       backgroundColor: theme.palette.primary.main,
-      position: "relative",
-      borderRadius: "50%",
-      display: "inline-block",
-      marginLeft: "auto",
-      cursor: "pointer",
-    },
-    text: {
-      textTransform: "uppercase",
-      fontSize: "1.125rem",
-      fontWeight: 700,
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
+      marginRight: rem(30),
+      letterSpacing: rem(2),
+      fontSize: rem(20),
       color: colors.white,
     },
   }),
@@ -36,9 +25,7 @@ export default function ProfileButton() {
 
   return (
     <div className={styles.root}>
-      <Typography variant="body1" className={styles.text}>
-        {initials}
-      </Typography>
+      <Avatar className={styles.text}>{initials}</Avatar>
     </div>
   );
 }

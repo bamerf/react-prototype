@@ -18,10 +18,11 @@ const useStyles = makeStyles(
       display: "flex",
       alignItems: "center",
     },
-    menuParent: {},
+    menuParent: { position: "relative" },
     link: {
       color: colors.blackAbsolute,
       transition: transitionDetails,
+
       cursor: "pointer",
       "&:hover": {
         color: theme.palette.primary.main,
@@ -50,10 +51,11 @@ const useStyles = makeStyles(
       borderTop: createBorderTop(theme, 0),
       borderColor: borderTopColor(theme, 1),
       transition: transitionDetails,
+      width: "max-content",
       position: "absolute",
       padding: `${rem(8)} 0`,
       boxShadow: boxShadowOn,
-      top: rem(70),
+      top: rem(30),
       zIndex: 2,
       backgroundColor: fade(colors.white, 1),
       borderRadius: 5,
@@ -87,7 +89,7 @@ const getPaths = (path) => {
 export default function DropDownMenu(props) {
   const styles = useStyles();
   const pathNames = getPaths(props.path);
-  const [showMenu, setShowMenu] = useState(1);
+  const [showMenu, setShowMenu] = useState(0);
 
   const hoverOn = () => {
     setShowMenu(1);

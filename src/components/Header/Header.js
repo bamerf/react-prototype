@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 import BrandLogo from "../BrandAssests/BrandLogo";
-// import HeaderNav from "../Nav/HeaderNav";
+import HeaderNav from "../Nav/HeaderNav";
 import ProfileButton from "../Button/ProfileButton";
 import { colors } from "../../data/colors";
 import { rem } from "../../helpers/style";
@@ -20,7 +20,6 @@ const useStyles = makeStyles(
       width: "inherit",
       display: "flex",
       alignItems: "center",
-      justifyContent: "space-between",
     },
     brandLogo: {
       width: rem(200),
@@ -37,7 +36,7 @@ export default function Header() {
     <div className={styles.root}>
       <div className={styles.container}>
         <BrandLogo className={styles.brandLogo} />
-        {/* <HeaderNav /> */}
+        <HeaderNav />
         <ProfileButton />
       </div>
     </div>

@@ -1,53 +1,38 @@
 import React from "react";
-import { Typography, makeStyles } from "@material-ui/core";
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import { colors } from "../../data/colors";
+import { makeStyles } from "@material-ui/core";
+import DropDownMenu from "../DropDownMenu/DropDownMenu";
 import { rem } from "../../helpers/style";
 
 const useStyles = makeStyles(
-  {
+  (theme) => ({
     root: {
       display: "flex",
-      alignItems: "center",
-      width: "55%",
-      marginLeft: "12rem",
+      marginLeft: rem(130),
+      width: "60%",
       justifyContent: "space-evenly",
     },
-    link: {
+    linkParent: {
       display: "flex",
-
       alignItems: "center",
     },
-    linkText: {
-      paddingRight: rem(5),
-      whiteSpace: "nowrap",
-      fontWeight: 500,
-    },
-    arrow: {
-      color: colors.gray4,
-    },
-  },
+  }),
   { name: "HeaderNav" }
 );
 
 export default function HeaderNav() {
   const styles = useStyles();
-  const links = [
+
+  const paths = [
     "Business toolkit",
     "Awareness posters",
     "Awareness training",
-    "Phishing Simulations",
+    "Phishing simulations",
   ];
 
   return (
     <div className={styles.root}>
-      {links.map((link, index) => (
-        <div className={styles.link}>
-          <Typography variant="h6" className={styles.linkText} key={index}>
-            {link}
-          </Typography>
-          <KeyboardArrowDownIcon className={styles.arrow} key={index - 1} />
-        </div>
+      {paths.map((path, index) => (
+        <DropDownMenu path={path} key={index} className={styles.linkRoot} />
       ))}
     </div>
   );

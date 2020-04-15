@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, Typography, fade } from "@material-ui/core";
+import { makeStyles, Typography } from "@material-ui/core";
 import { colors } from "../../data/colors";
 import { rem } from "../../helpers/style";
 

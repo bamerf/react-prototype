@@ -7,12 +7,12 @@ import { rem } from "../../helpers/style";
 const useStyles = makeStyles(
   (theme) => ({
     text: {
-      width: 56,
-      height: 56,
+      //width: 56,
+      //height: 56,
       backgroundColor: theme.palette.primary.main,
       marginRight: rem(30),
       letterSpacing: rem(2),
-      fontSize: rem(20),
+      fontSize: rem(14),
       color: colors.white,
     },
   }),

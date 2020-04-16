@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core";
 import CampaignActivity from "../CampaignActivity/CampaignActivity";
 import Chart from "../Chart/Chart";
+import AddCampaignCard from "../AddCampaign/AddCampaignCard";
 
 const useStyles = makeStyles({
   campaignActivity: {
@@ -43,6 +44,7 @@ export default function Campaigns() {
         duration="All at once"
         enrolment="Active"
       />
+      <AddCampaignCard className={styles.campaignActivity} />
     </div>
   );
 }

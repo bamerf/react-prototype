@@ -111,7 +111,8 @@ export default function Chart() {
             tickLine={false}
             tickMargin={17}
           />
-          <YAxis axisLine={false} tickLine={false} tickMargin={32} unit="%" />
+          <YAxis yAxisId="left" axisLine={false} tickLine={false} tickMargin={32} unit="%" />
+          <YAxis yAxisId="right" hide="true" axisLine={false} tickLine={false} tickMargin={32} unit="%" />
           <Legend verticalAlign="top" align="right" height={50} iconSize={20} />
 
           <Bar
@@ -120,25 +121,30 @@ export default function Chart() {
             stackId="a"
             barSize={80}
             fill={theme.palette.primary.main}
+            yAxisId="left"
           />
           <Bar
             dataKey="opened"
             label={{ fill: colors.gray3, fontSize: 15 }}
             stackId="a"
             fill={fade(theme.palette.primary.light, 0.5)}
+            yAxisId="left"
           />
           <Bar
             dataKey="sent"
             label={{ fill: colors.gray3, fontSize: 15 }}
             stackId="a"
             fill={colors.gray6}
+            yAxisId="left"
           />
           <Line
             type="monotone"
             dataKey="risk"
             stroke={colors.gray3}
+            strokeWidth={3}
             activeDot={{ r: 6 }}
             dot={{ stroke: colors.black, strokeWidth: 2, r: 4 }}
+            yAxisId="right"
           />
         </ComposedChart>
       </ResponsiveContainer>

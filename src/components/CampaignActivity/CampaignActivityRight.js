@@ -1,7 +1,5 @@
 import React from "react";
 import { makeStyles, Typography, Divider, fade } from "@material-ui/core";
-import VisibilityIcon from "@material-ui/icons/Visibility";
-import DescriptionIcon from "@material-ui/icons/Description";
 import HelpIcon from "@material-ui/icons/Help";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import SendIcon from "@material-ui/icons/Send";

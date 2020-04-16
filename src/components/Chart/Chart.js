@@ -12,7 +12,6 @@ import {
 } from "recharts";
 import { boxShadowOn, rem } from "../../helpers/style";
 import { colors } from "../../data/colors";
-import { red } from "@material-ui/core/colors";
 
 const useStyles = makeStyles(
   () => ({
@@ -28,10 +27,9 @@ const useStyles = makeStyles(
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      fontFamily:  "Nunito",
+      fontFamily: "Nunito",
       fontSize: 12,
     },
-    
   }),
   { name: "Chart" }
 );
@@ -103,16 +101,35 @@ export default function Chart() {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 0" vertical={false}  stroke = {colors.gray5} />
+          <CartesianGrid
+            strokeDasharray="3 0"
+            vertical={false}
+            stroke={colors.gray5}
+          />
           <XAxis
             dataKey="date"
             axisLine={false}
             tickLine={false}
             tickMargin={17}
-            stroke = {colors.gray4}
+            stroke={colors.gray4}
           />
-          <YAxis yAxisId="left" axisLine={false} tickLine={false} tickMargin={32} unit="%" stroke = {colors.gray4} />
-          <YAxis yAxisId="right" hide="true" axisLine={false} tickLine={false} tickMargin={32} unit="%"  stroke = {colors.gray4}/>
+          <YAxis
+            yAxisId="left"
+            axisLine={false}
+            tickLine={false}
+            tickMargin={32}
+            unit="%"
+            stroke={colors.gray4}
+          />
+          <YAxis
+            yAxisId="right"
+            hide="true"
+            axisLine={false}
+            tickLine={false}
+            tickMargin={32}
+            unit="%"
+            stroke={colors.gray4}
+          />
           <Legend verticalAlign="top" align="right" height={50} iconSize={20} />
 
           <Bar

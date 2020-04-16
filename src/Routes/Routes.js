@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from "react-router";
 import Login from "../pages/Login/Login";
 import Home from "../pages/Home";
 import PhishingSimulations from "../pages/PhishingSimulations";
+import DeveloperWindow from "../components/Developer/DeveloperWindow";
 
 export const Routes = () => {
   const userLoggedIn = true;
@@ -22,6 +23,7 @@ export const Routes = () => {
       {/* <Route path="/styleguide" component={StyleGuide} /> */}
       <Route path="/home" component={Home} />
       <Route path="/phishing-simulations" component={PhishingSimulations} />
+      <Route path="/development" component={DeveloperWindow} />
       <Redirect to="/home" />
     </Switch>
   );

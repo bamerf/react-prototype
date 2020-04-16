@@ -1,6 +1,7 @@
 import React from "react";
 import BannerWoman from "../BrandAssests/BannerWoman";
 import { Typography, makeStyles } from "@material-ui/core";
+import Bold from "../Bold/Bold";
 import { colors } from "../../data/colors";
 import { rem } from "../../helpers/style";
 
@@ -17,6 +18,7 @@ const useStyles = makeStyles(
     title: {
       marginBottom: 10,
       color: colors.blackAbsolute,
+      display: "inline-flex",
     },
     description: {
       marginBottom: 60,
@@ -39,7 +41,7 @@ export default function Banner() {
     <div className={styles.root}>
       <div className={styles.textRoot}>
         <Typography className={styles.title} variant="h3">
-          Welcome to <b>Phishing Simulations</b>
+          Welcome to <Bold text="Phishing Simulations" variant="h3" />
         </Typography>
         <Typography className={styles.description} variant="body2">
           Below is a summary of phishing campaigns that our team has put

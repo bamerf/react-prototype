@@ -10,7 +10,7 @@ const useStyles = makeStyles(
       color: colors.gray1,
       lineHeight: 1.8,
       marginBottom: rem(4),
-      fontSize: rem(12),
+      fontSize: rem(14),
     },
     info: {
       color: colors.gray3,

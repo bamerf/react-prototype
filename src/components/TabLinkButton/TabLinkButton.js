@@ -60,12 +60,12 @@ const useStyles = makeStyles(
     text: {
       transition: `color ${transitionTimeMs}ms`,
       marginRight: rem(8),
-      fontSize: rem(14),
+      // fontSize: rem(14),
       color: colors.gray3,
       fontWeight: 500,
       [theme.breakpoints.up("lg")]: {
         marginRight: rem(22),
-        fontSize: rem(14),
+        // fontSize: rem(14),
       },
     },
     chevron: {

@@ -1,13 +1,24 @@
 import React from "react";
-// import bannerWoman from "../../assets/images/bannerWoman.png";
 import { BannerWomanSvg } from "../../assets/svg/BannerWomanSvg";
-// import { ReactComponent as Woman } from "../../assets/svg/bannerWoman.svg";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import classnames from "classnames";
+
+const useStyles = makeStyles(
+  {
+    root: {
+      position: "absolute",
+      top: "5rem",
+    },
+  },
+  { name: "BannerWomanSvg" }
+);
 
 export default function BannerWoman({ className }) {
+  const styles = useStyles();
+  const theme = useTheme();
   return (
-    <div style={{ height: 0 }}>
-      {/* <img src={bannerWoman} alt="woman" className={className} /> */}
-      <BannerWomanSvg />
+    <div className={classnames(className, styles.root)}>
+      <BannerWomanSvg color={theme.palette.primary.main} />
     </div>
   );
 }

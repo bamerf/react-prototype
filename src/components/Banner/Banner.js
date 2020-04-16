@@ -27,12 +27,16 @@ const useStyles = makeStyles(
     woman: {
       width: rem(330),
       position: "relative",
-      top: "-1.60rem",
-      right: `-${rem(200)}`,
+      top: "-33px",
+      right: `-6.5rem`,
       zIndex: 0,
     },
+    bannerWomanContainer: {
+      width: `-26px`,
+      height: rem(0),
+    },
   },
-  { name: "PhishingSimulations" }
+  { name: "PhishingSimulationsBanner" }
 );
 
 export default function Banner() {
@@ -51,7 +55,9 @@ export default function Banner() {
           then be available within 24 hours.
         </Typography>
       </div>
-      <BannerWoman className={styles.woman} />
+      <div className={styles.bannerWomanContainer}>
+        <BannerWoman className={styles.woman} />
+      </div>
     </div>
   );
 }

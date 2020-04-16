@@ -137,8 +137,10 @@ const staticThemeProperties = {
           fontSize: rem(18),
         },
       },
-      label: {
-        fontWeight: 500,
+      Button: {
+        label: {
+          fontWeight: 500,
+        },
       },
     },
   },

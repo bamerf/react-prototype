@@ -27,6 +27,8 @@ const useStyles = makeStyles(
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      fontFamily:  "Roboto",
+      fontSize: 14,
     },
     chartText: {
       fontSize: 14,

@@ -124,7 +124,7 @@ export default function CampaignActivityRight(props) {
   return (
     <div className={styles.root}>
       <div className={styles.top}>
-        <PhishingIcon className={styles.phishingIcon} fontSize="large" />
+        {/* <PhishingIcon className={styles.phishingIcon} fontSize="large" /> */}
         <Typography variant="h5" className={styles.title}>
           {props.title}
         </Typography>

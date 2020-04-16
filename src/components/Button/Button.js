@@ -7,18 +7,20 @@ import { rem } from "../../helpers/style";
 const useStyles = makeStyles(
   {
     root: {
-      borderRadius: 5,
-      paddingTop: rem(9),
-      paddingBottom: rem(9),
+      borderRadius: 0,
+      paddingTop: rem(10),
+      paddingBottom: rem(10),
+      paddingLeft: rem(20),
+      paddingRight: rem(20),
     },
     label: {
       textTransform: "none",
-      fontWeight: 600,
+      fontWeight: 500,
       color: colors.white,
       lineHeight: 1.2,
     },
     secondary: {
-      borderColor: colors.gray5,
+      borderColor: colors.gray6,
       "& $label": {
         color: colors.gray1,
       },

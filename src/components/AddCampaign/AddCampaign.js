@@ -45,6 +45,10 @@ const useStyles = makeStyles(
         marginBottom: rem(18),
       },
     },
+    template_select: {
+        backgroundColor: "white",
+        padding: rem(18),
+    },
     paypal: {
       "& > *:first-child": {
         marginBottom: rem(6),
@@ -60,7 +64,7 @@ const useStyles = makeStyles(
       color: colors.gray1,
     },
     attachmentDetails: {
-      padding: `0 ${rem(extraPaddingSides)}`,
+      // padding: `0 ${rem(extraPaddingSides)}`,
     },
     advancedSettings: {
       padding: `${rem(24)} ${rem(extraPaddingSides)} ${rem(16)}`,
@@ -100,7 +104,7 @@ export default function AddCampaign() {
       <div className={styles.content}>
         <div className={styles.main}>
           <GrayArea>
-            <Button
+            <Button className={styles.template_select}
               kind="secondary"
               startIcon={<InsertDriveFileIcon color="primary" />}
             >

@@ -140,8 +140,8 @@ export default function Chart() {
           <Line
             type="monotone"
             dataKey="risk"
-            stroke={colors.gray3}
-            strokeWidth={3}
+            stroke={colors.gray2}
+            strokeWidth={2}
             activeDot={{ r: 6 }}
             dot={{ stroke: colors.black, strokeWidth: 2, r: 4 }}
             yAxisId="right"

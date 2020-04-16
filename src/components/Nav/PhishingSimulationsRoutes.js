@@ -30,7 +30,7 @@ export const phishingSimulationsRouteToName = (route) => {
     case phishingSimulationsRoutes.ManageRecipients:
       return "Manage Recipients";
     case phishingSimulationsRoutes.SendingGroups:
-      return "SendingGroups";
+      return "Sending Groups";
     case phishingSimulationsRoutes.Reports:
       return "Reports";
     case phishingSimulationsRoutes.Settings:

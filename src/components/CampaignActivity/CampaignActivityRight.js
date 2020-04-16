@@ -130,7 +130,7 @@ export default function CampaignActivityRight(props) {
         <Button
           kind="secondary"
           className={classname(styles.previewButton)}
-          startIcon={<VisibilityIcon />}
+          // startIcon={<VisibilityIcon />}
           size="small"
         >
           Preview
@@ -139,7 +139,7 @@ export default function CampaignActivityRight(props) {
           <Button
             kind="secondary"
             className={classname(styles.text)}
-            startIcon={<DescriptionIcon />}
+            // startIcon={<DescriptionIcon />}
             size="small"
           >
             View results

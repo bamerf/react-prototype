@@ -6,7 +6,7 @@ import Home from "../pages/Home";
 import PhishingSimulations from "../pages/PhishingSimulations";
 
 export const Routes = () => {
-  const userLoggedIn = false;
+  const userLoggedIn = true;
   if (!userLoggedIn) {
     return (
       <Switch>

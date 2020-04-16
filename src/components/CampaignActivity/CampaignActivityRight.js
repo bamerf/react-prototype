@@ -5,7 +5,6 @@ import DescriptionIcon from "@material-ui/icons/Description";
 import HelpIcon from "@material-ui/icons/Help";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import SendIcon from "@material-ui/icons/Send";
-import { PhishingIcon } from "../../assets/svg/PhishingIcon";
 import Button from "../Button/Button";
 import { colors } from "../../data/colors";
 import { TextCircle } from "../TextCircle/TextCircle";

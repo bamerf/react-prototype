@@ -11,6 +11,7 @@ const useStyles = makeStyles(
       fontWeight: 500,
       color: colors.gray1,
       marginBottom: rem(9),
+      fontSize : rem(14)
     },
   },
   { name: "InputLabel" }

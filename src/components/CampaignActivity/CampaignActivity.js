@@ -14,7 +14,7 @@ const useStyles = makeStyles(
     root: {
       width: "100%",
       backgroundColor: colors.white,
-      borderRadius: 0,
+      borderRadius: 6,
       boxShadow: boxShadowOn,
       overflow: "hidden",
       display: "flex",

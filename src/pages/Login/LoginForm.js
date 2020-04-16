@@ -21,8 +21,9 @@ const useStyles = makeStyles(
       width: rem(506),
       height: rem(472),
       marginLeft: rem(87),
-      marginTop: rem(80),
+      marginTop: rem(40),
       marginBottom: rem(76),
+      position: "sticky",
       boxShadow: "0px 10px 50px #ababab",
     },
     top: {

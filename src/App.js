@@ -94,6 +94,12 @@ const staticThemeProperties = {
         ...sharedBodyStyles,
         fontSize: rem(14),
       },
+      button: {
+        fontWeight: 500,
+        label: {
+          fontWeight: 500,
+        },
+      },
     },
     MuiInputBase: {
       input: {
@@ -130,6 +136,9 @@ const staticThemeProperties = {
         "& > *:first-child": {
           fontSize: rem(18),
         },
+      },
+      label: {
+        fontWeight: 500,
       },
     },
   },

@@ -28,7 +28,7 @@ const useStyles = makeStyles(
     title: ({ dark }) => ({
       color: dark ? colors.gray2 : colors.white,
       fontWeight: 500,
-      fontSize: rem(12),
+      fontSize: rem(13),
       lineHeight: 1,
       textAlign: "center",
     }),

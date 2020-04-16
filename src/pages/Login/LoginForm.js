@@ -18,8 +18,8 @@ const useStyles = makeStyles(
   (theme) => ({
     root: {
       borderTop: createBorderTop(theme),
-      width: rem(506),
-      height: rem(472),
+      width: rem(427),
+      height: rem(375),
       marginLeft: rem(87),
       marginTop: rem(40),
       marginBottom: rem(76),
@@ -29,25 +29,25 @@ const useStyles = makeStyles(
     top: {
       display: "flex",
       alignItems: "center",
-      marginTop: rem(30),
-      marginBottom: rem(29),
-      marginLeft: rem(38),
+      marginTop: rem(15),
+      marginBottom: rem(15),
+      marginLeft: rem(30),
     },
     icon: {
-      marginRight: rem(24),
+      marginRight: rem(10),
     },
     divider: {
       backgroundColor: fade(colors.gray2, 0.1),
     },
     form: {
-      padding: `${rem(16)} ${rem(24)} ${rem(32)}`,
+      padding: `${rem(10)} ${rem(24)} ${rem(32)}`,
       "& > *:not(:last-child)": {
         marginBottom: rem(16),
       },
     },
     button: {
-      height: rem(70),
-      width: rem(127),
+      height: rem(55),
+      width: rem(100),
     },
     inputLabel: {
       marginTop: rem(15),
@@ -56,8 +56,7 @@ const useStyles = makeStyles(
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      marginTop: rem(45),
-      paddingBottom: rem(57),
+      marginTop: rem(20),
     },
     link: {
       cursor: "pointer",

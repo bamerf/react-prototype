@@ -9,8 +9,12 @@ import { rem } from "../../helpers/style";
 
 const useStyles = makeStyles(
   {
+    page: {
+      backgroundColor: "#F2F2F2",
+    },
     container: {
       maxWidth: rem(1400),
+      position: "relative",
     },
     welcome: {
       marginTop: rem(30),
@@ -25,8 +29,16 @@ const useStyles = makeStyles(
       marginTop: rem(50),
       marginLeft: rem(88),
     },
-    brandWoman: {
-      width: rem(900),
+    brandWomanContainer: {
+      width: rem(800),
+      position: "absolute",
+      top: rem(60),
+      right: rem(36),
+      zIndex: 0,
+    },
+    leftSection: {
+      zIndex: 1,
+      position: "relative",
     },
   },
   { name: "Login" }
@@ -36,9 +48,9 @@ export default function Login() {
   const styles = useStyles();
 
   return (
-    <Page>
+    <Page className={styles.page}>
       <Container className={styles.container}>
-        <div>
+        <div className={styles.leftSection}>
           <BrandLogo className={styles.brandLogo} />
           <Typography variant="h2" className={styles.welcome}>
             Welcome to{" "}
@@ -50,8 +62,8 @@ export default function Login() {
           <LoginForm />
           <LoginFooter />
         </div>
-        <div>
-          <LoginLady className={styles.brandWoman} />
+        <div className={styles.brandWomanContainer}>
+          <LoginLady />
         </div>
       </Container>
     </Page>

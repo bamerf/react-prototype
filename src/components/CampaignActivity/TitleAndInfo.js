@@ -8,7 +8,7 @@ const useStyles = makeStyles(
   {
     root: {
       color: colors.gray1,
-      lineHeight: 1.4,
+      lineHeight: 1.8,
       marginBottom: rem(4),
       fontSize: rem(12),
     },

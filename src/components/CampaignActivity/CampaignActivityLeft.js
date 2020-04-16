@@ -38,8 +38,9 @@ const useStyles = makeStyles(
       lineHeight: 1,
     },
     dateCompleted: {
-      color: "inherit",
-      fontSize: rem(12),
+      // color: "inherit",
+      fontSize: rem(13),
+      color : "rgb(255, 255, 255,0.7)",
       marginBottom: rem(20),
       lineHeight: 1,
     },

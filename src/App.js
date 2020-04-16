@@ -55,7 +55,13 @@ const staticThemeProperties = {
     },
   },
   typography: {
-    fontFamily: '"Montserrat", Arial, Helvetica, sans-serif',
+    // fontFamily: '"Montserrat", Arial, Helvetica, sans-serif',
+    fontFamily: '"Nunito", Arial, Helvetica, sans-serif',
+    //fontFamily: '"Roboto", Arial, Helvetica, sans-serif',
+    //fontFamily: '"Catamaran", Arial, Helvetica, sans-serif',
+    //fontFamily: '"Open Sans", Arial, Helvetica, sans-serif',
+
+
   },
   overrides: {
     MuiTypography: {
@@ -71,7 +77,7 @@ const staticThemeProperties = {
       },
       h3: {
         ...sharedHeadingStyles,
-        fontSize: rem(28),
+        fontSize: rem(30),
         lineHeight: 1.16342,
       },
       h4: {
@@ -95,7 +101,7 @@ const staticThemeProperties = {
       },
       body2: {
         ...sharedBodyStyles,
-        fontSize: rem(14),
+        fontSize: rem(16),
       },
       button: {
         fontWeight: 500,
@@ -148,7 +154,8 @@ const staticThemeProperties = {
     },
     Button: {
       label: {
-        fontWeight: 500,
+        fontWeight: 600,
+        fontSize: rem(14),
       },
     },
   },

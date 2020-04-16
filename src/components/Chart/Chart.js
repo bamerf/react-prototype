@@ -12,6 +12,7 @@ import {
 } from "recharts";
 import { boxShadowOn, rem } from "../../helpers/style";
 import { colors } from "../../data/colors";
+import { red } from "@material-ui/core/colors";
 
 const useStyles = makeStyles(
   () => ({
@@ -27,12 +28,10 @@ const useStyles = makeStyles(
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      fontFamily:  "Roboto",
-      fontSize: 14,
+      fontFamily:  "Nunito",
+      fontSize: 12,
     },
-    chartText: {
-      fontSize: 14,
-    },
+    
   }),
   { name: "Chart" }
 );
@@ -43,52 +42,52 @@ export default function Chart() {
   const data = [
     {
       date: "01/07",
-      risk: 4,
-      trained: 1,
-      opened: 1,
-      sent: 2,
+      Risk: 4,
+      Trained: 1,
+      Opened: 1,
+      Sent: 2,
     },
     {
       date: "02/06",
-      risk: 0,
-      trained: 0,
-      opened: 2,
-      sent: 2,
+      Risk: 0,
+      Trained: 0,
+      Opened: 2,
+      Sent: 2,
     },
     {
       date: "06/09",
-      risk: 4,
-      trained: 1,
-      opened: 1,
-      sent: 2,
+      Risk: 4,
+      Trained: 1,
+      Opened: 1,
+      Sent: 2,
     },
     {
       date: "12/09",
-      risk: 0,
-      trained: 1,
-      opened: 2,
-      sent: 3,
+      Risk: 0,
+      Trained: 1,
+      Opened: 2,
+      Sent: 3,
     },
     {
       date: "04/10",
-      risk: 0,
-      trained: 0,
-      opened: 1,
-      sent: 1,
+      Risk: 0,
+      Trained: 0,
+      Opened: 1,
+      Sent: 1,
     },
     {
       date: "07/11",
-      risk: 8,
-      trained: 3,
-      opened: 3,
-      sent: 4,
+      Risk: 8,
+      Trained: 3,
+      Opened: 3,
+      Sent: 4,
     },
     {
       date: "31/01",
-      risk: 28,
-      trained: 2,
-      opened: 2,
-      sent: 4,
+      Risk: 28,
+      Trained: 2,
+      Opened: 2,
+      Sent: 4,
     },
   ];
 
@@ -104,42 +103,43 @@ export default function Chart() {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 0" vertical={false} />
+          <CartesianGrid strokeDasharray="3 0" vertical={false}  stroke = {colors.gray5} />
           <XAxis
             dataKey="date"
             axisLine={false}
             tickLine={false}
             tickMargin={17}
+            stroke = {colors.gray4}
           />
-          <YAxis yAxisId="left" axisLine={false} tickLine={false} tickMargin={32} unit="%" />
-          <YAxis yAxisId="right" hide="true" axisLine={false} tickLine={false} tickMargin={32} unit="%" />
+          <YAxis yAxisId="left" axisLine={false} tickLine={false} tickMargin={32} unit="%" stroke = {colors.gray4} />
+          <YAxis yAxisId="right" hide="true" axisLine={false} tickLine={false} tickMargin={32} unit="%"  stroke = {colors.gray4}/>
           <Legend verticalAlign="top" align="right" height={50} iconSize={20} />
 
           <Bar
-            dataKey="trained"
-            label={{ fill: colors.white, fontSize: 15 }}
+            dataKey="Trained"
+            label={{ fill: colors.white, fontSize: 13 }}
             stackId="a"
             barSize={80}
             fill={theme.palette.primary.main}
             yAxisId="left"
           />
           <Bar
-            dataKey="opened"
-            label={{ fill: colors.gray3, fontSize: 15 }}
+            dataKey="Opened"
+            label={{ fill: colors.gray3, fontSize: 13 }}
             stackId="a"
             fill={fade(theme.palette.primary.light, 0.5)}
             yAxisId="left"
           />
           <Bar
-            dataKey="sent"
-            label={{ fill: colors.gray3, fontSize: 15 }}
+            dataKey="Sent"
+            label={{ fill: colors.gray3, fontSize: 13 }}
             stackId="a"
             fill={colors.gray6}
             yAxisId="left"
           />
           <Line
             type="monotone"
-            dataKey="risk"
+            dataKey="Risk"
             stroke={colors.gray2}
             strokeWidth={2}
             activeDot={{ r: 6 }}

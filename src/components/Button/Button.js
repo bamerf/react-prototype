@@ -7,7 +7,7 @@ import { rem } from "../../helpers/style";
 const useStyles = makeStyles(
   {
     root: {
-      borderRadius: 0,
+      borderRadius: 4,
       paddingTop: rem(10),
       paddingBottom: rem(10),
       paddingLeft: rem(20),

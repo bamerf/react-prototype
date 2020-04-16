@@ -103,6 +103,9 @@ const staticThemeProperties = {
         ...sharedBodyStyles,
         fontSize: rem(16),
       },
+      b: {
+        fontWeight: 800,
+      },
       button: {
         fontWeight: 500,
         label: {

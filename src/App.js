@@ -54,6 +54,9 @@ const staticThemeProperties = {
       secondary: colors.gray3,
     },
   },
+  typography: {
+    fontFamily: '"Montserrat", Arial, Helvetica, sans-serif',
+  },
   overrides: {
     MuiTypography: {
       h1: {
@@ -112,6 +115,11 @@ const staticThemeProperties = {
       input: {
         padding: rem(14),
         fontSize: rem(14),
+      },
+      root: {
+        "&:hover:not($disabled):not($focused):not($error) $notchedOutline": {
+          borderColor: "#a3a3a3",
+        },
       },
     },
     MuiInputLabel: {

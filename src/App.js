@@ -60,9 +60,8 @@ const staticThemeProperties = {
     //fontFamily: '"Roboto", Arial, Helvetica, sans-serif',
     //fontFamily: '"Catamaran", Arial, Helvetica, sans-serif',
     //fontFamily: '"Open Sans", Arial, Helvetica, sans-serif',
-
-
   },
+
   overrides: {
     MuiTypography: {
       h1: {

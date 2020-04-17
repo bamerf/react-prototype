@@ -25,8 +25,8 @@ const useStyles = makeStyles(
 
 function App() {
   const styles = useStyles();
-  // const brandColor = "#009ae4";
-  const brandColor = "";
+  const brandColor = "#009ae4";
+  // const brandColor = "";
   const brandRequestSuccess = true;
 
   const theme = useMemo(() => {

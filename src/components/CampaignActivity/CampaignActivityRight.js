@@ -121,14 +121,12 @@ export default function CampaignActivityRight(props) {
   return (
     <div className={styles.root}>
       <div className={styles.top}>
-        {/* <PhishingIcon className={styles.phishingIcon} fontSize="large" /> */}
         <Typography variant="h5" className={styles.title}>
           {props.title}
         </Typography>
         <Button
           kind="secondary"
           className={classname(styles.previewButton)}
-          // startIcon={<VisibilityIcon />}
           size="small"
         >
           Preview
@@ -137,7 +135,6 @@ export default function CampaignActivityRight(props) {
           <Button
             kind="secondary"
             className={classname(styles.text)}
-            // startIcon={<DescriptionIcon />}
             size="small"
           >
             View results

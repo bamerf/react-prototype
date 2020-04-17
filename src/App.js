@@ -160,6 +160,16 @@ const staticThemeProperties = {
         fontSize: rem(14),
       },
     },
+    MuiCheckbox: {
+      colorPrimary: {
+        color: colors.gray5,
+      },
+    },
+    MuiFormControlLabel: {
+      label: {
+        color: colors.gray1,
+      },
+    },
   },
 };
 

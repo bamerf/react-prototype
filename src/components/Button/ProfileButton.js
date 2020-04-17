@@ -16,7 +16,7 @@ const useStyles = makeStyles(
       color: colors.white,
     },
     initials: {
-      paddingLeft: rem(2),
+      paddingLeft: rem(3),
       color: colors.white,
       fontSize: rem(14),
     },

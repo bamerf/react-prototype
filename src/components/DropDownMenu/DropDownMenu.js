@@ -22,7 +22,6 @@ const useStyles = makeStyles(
     link: {
       color: colors.blackAbsolute,
       transition: transitionDetails,
-
       cursor: "pointer",
       "&:hover": {
         color: theme.palette.primary.main,

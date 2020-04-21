@@ -77,7 +77,7 @@ export const globalThemeOptions = {
       },
       body2: {
         ...sharedBodyStyles,
-        fontSize: rem(16),
+        fontSize: rem(14),
       },
       b: {
         fontWeight: 800,

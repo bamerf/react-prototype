@@ -3,13 +3,16 @@ import React from "react";
 // import ModalWindow from "../Modals/ModalWindow";
 // import GenerateInviteLink from "../Modals/GenerateInviteLink";
 // import GlobalSettingsModal from "../Modals/GlobalSettings";
-import ResendWelcomeEmails from "../Modals/ResendWelcomeEmails";
+// import ResendWelcomeEmails from "../Modals/ResendWelcomeEmails";
+import SelectCampaignTemplate from "../SelectCampaignTemplate/SelectCampaignTemplate";
 
 export default function DeveloperWindow() {
   return (
     <div style={styles}>
       {/* <GlobalSettingsModal /> */}
-      <ResendWelcomeEmails />
+      {/* <ResendWelcomeEmails /> */}
+      {/* <GenerateInviteLink /> */}
+      <SelectCampaignTemplate />
     </div>
   );
 }

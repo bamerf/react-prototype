@@ -8,6 +8,7 @@ const useStyles = makeStyles(
   (theme) => ({
     root: {
       marginLeft: rem(10),
+      marginRight: rem(25),
     },
     text: {
       backgroundColor: theme.palette.primary.main,

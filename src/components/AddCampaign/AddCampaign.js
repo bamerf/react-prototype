@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   makeStyles,
   Divider,
@@ -16,6 +16,7 @@ import GrayArea from "../GreyArea/GreyArea";
 import Button from "../Button/Button";
 import InputLabel from "../InputLabel/InputLabel";
 import Expansion from "../Expansion/Expansion";
+import SelectCampaingTemplate from "../SelectCampaignTemplate/SelectCampaignTemplate";
 
 const paddingSides = 28;
 const extraPaddingSides = 24;
@@ -46,8 +47,8 @@ const useStyles = makeStyles(
       },
     },
     template_select: {
-        backgroundColor: "white",
-        padding: rem(18),
+      backgroundColor: "white",
+      padding: rem(18),
     },
     paypal: {
       "& > *:first-child": {
@@ -94,6 +95,8 @@ const useStyles = makeStyles(
 export default function AddCampaign() {
   const styles = useStyles();
 
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div className={styles.root}>
       <div className={styles.top}>
@@ -104,12 +107,15 @@ export default function AddCampaign() {
       <div className={styles.content}>
         <div className={styles.main}>
           <GrayArea>
-            <Button className={styles.template_select}
+            <Button
+              className={styles.template_select}
               kind="secondary"
+              onClick={() => setOpenModal(true)}
               startIcon={<InsertDriveFileIcon color="primary" />}
             >
               Select campaign template
             </Button>
+            <SelectCampaingTemplate open={openModal} callBack={setOpenModal} />
           </GrayArea>
           <GrayArea className={styles.paypal}>
             <Typography variant="h6">PayPal - Suspended Account</Typography>

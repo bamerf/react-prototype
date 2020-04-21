@@ -39,6 +39,7 @@ export default function GlobalSettings() {
     <ModalWindow
       open={open}
       title="Global Settings"
+      width={700}
       button={
         <div>
           <Button kind="primary" className={styles.button}>

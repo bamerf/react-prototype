@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Modal,
@@ -22,7 +22,9 @@ const useStyles = makeStyles(
     container: {
       backgroundColor: colors.white,
       borderTop: createBorderTop(theme),
-      width: rem(700),
+      outline: "none",
+      overflow: "scroll",
+      maxHeight: rem(700),
     },
     header: {
       display: "flex",
@@ -51,11 +53,18 @@ const useStyles = makeStyles(
 );
 
 export default function ModalWindow(props) {
+  const openModal = props.open;
+  const modalCallBack = props.callBack;
   const styles = useStyles();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(openModal);
+
+  useEffect(() => {
+    setOpen(openModal);
+  }, [openModal]);
 
   const handleClose = () => {
     setOpen(false);
+    modalCallBack(false);
   };
 
   return (
@@ -70,7 +79,12 @@ export default function ModalWindow(props) {
       }}
     >
       <Fade in={open}>
-        <Paper className={styles.container} elevation={3} variant="outlines">
+        <Paper
+          className={styles.container}
+          style={{ width: rem(props.width) }}
+          elevation={3}
+          variant="outlines"
+        >
           <div className={styles.header}>
             <Typography variant="h4">{props.title}</Typography>
             <ClearRounded

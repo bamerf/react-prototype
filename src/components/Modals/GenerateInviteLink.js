@@ -66,6 +66,7 @@ export default function GenerateInviteLink(props) {
     <ModalWindow
       open={open}
       title="Generate Invite Link"
+      width={700}
       button={
         <div>
           <Button kind="secondary" className={styles.button}>

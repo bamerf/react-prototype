@@ -87,7 +87,7 @@ const useStyles = makeStyles(
   { name: "TabLinkButton" }
 );
 
-export const TabLinkButton = ({ to, text, Icon, className }) => {
+export default function TabLinkButton({ to, text, Icon, className }) {
   const styles = useStyles();
 
   return (
@@ -104,4 +104,4 @@ export const TabLinkButton = ({ to, text, Icon, className }) => {
       <ChevronRightIcon className={styles.chevron} />
     </NavLink>
   );
-};
+}

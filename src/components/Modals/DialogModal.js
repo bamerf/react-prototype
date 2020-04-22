@@ -17,6 +17,7 @@ const useStyles = makeStyles(
       backgroundColor: colors.white,
       borderTop: createBorderTop(theme),
       width: rem(500),
+      outline: "none",
     },
     header: {
       display: "flex",

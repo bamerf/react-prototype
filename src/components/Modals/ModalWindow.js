@@ -23,8 +23,12 @@ const useStyles = makeStyles(
       backgroundColor: colors.white,
       borderTop: createBorderTop(theme),
       outline: "none",
-      overflow: "scroll",
       maxHeight: rem(700),
+      overflowY: "scroll",
+      "&::-webkit-scrollbar": {
+        width: 0,
+        height: 0,
+      },
     },
     header: {
       display: "flex",

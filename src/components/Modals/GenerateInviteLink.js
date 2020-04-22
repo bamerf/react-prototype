@@ -22,9 +22,6 @@ const useStyles = makeStyles(
   (theme) => ({
     button: {
       marginLeft: "1rem",
-      "& span": {
-        padding: `${rem(8)} ${rem(5)}`,
-      },
     },
     description: {
       margin: `${rem(16)} ${0}`,
@@ -69,10 +66,10 @@ export default function GenerateInviteLink(props) {
       width={700}
       button={
         <div>
-          <Button kind="secondary" className={styles.button}>
+          <Button thick={true} kind="secondary" className={styles.button}>
             Cancel
           </Button>
-          <Button kind="primary" className={styles.button}>
+          <Button thick={true} kind="primary" className={styles.button}>
             Generate Link
           </Button>
         </div>

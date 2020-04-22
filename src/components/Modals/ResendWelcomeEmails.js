@@ -13,9 +13,6 @@ const useStyles = makeStyles(
     },
     button: {
       marginLeft: "1rem",
-      "& span": {
-        padding: `${rem(5)} ${rem(3)}`,
-      },
     },
     description: {
       marginBottom: rem(5),
@@ -35,10 +32,10 @@ export default function ResendWelcomeEmails() {
       color={theme.palette.error.main}
       button={
         <div>
-          <Button kind="secondary" className={styles.button}>
+          <Button thick={true} kind="secondary" className={styles.button}>
             Cancel
           </Button>
-          <Button kind="primary" className={styles.button}>
+          <Button thick={true} kind="primary" className={styles.button}>
             Send
           </Button>
         </div>

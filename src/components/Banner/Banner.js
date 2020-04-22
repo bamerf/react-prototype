@@ -27,8 +27,8 @@ const useStyles = makeStyles(
     woman: {
       width: rem(330),
       position: "relative",
-      top: "-33px",
-      right: `-6.5rem`,
+      top: "-31px",
+      right: `-7.5rem`,
       zIndex: 0,
     },
     bannerWomanContainer: {

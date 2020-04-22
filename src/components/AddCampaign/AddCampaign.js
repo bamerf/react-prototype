@@ -259,8 +259,10 @@ export default function AddCampaign() {
           </Expansion>
           <Divider />
           <div className={styles.bottom}>
-            <Button kind="secondary">Cancel</Button>
-            <Button>Save campaign</Button>
+            <Button thick={true} kind="secondary">
+              Cancel
+            </Button>
+            <Button thick={true}>Save campaign</Button>
           </div>
         </div>
       </div>

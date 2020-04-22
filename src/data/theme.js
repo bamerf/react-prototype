@@ -131,12 +131,6 @@ export const globalThemeOptions = {
         },
       },
     },
-    Button: {
-      label: {
-        fontWeight: 600,
-        fontSize: rem(14),
-      },
-    },
     MuiCheckbox: {
       colorPrimary: {
         color: colors.gray5,

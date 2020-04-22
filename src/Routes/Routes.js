@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router";
-// import { StyleGuide } from "pages/StyleGuide";
+import StyleGuide from "../pages/StyleGuide/StyleGuide";
 import Login from "../pages/Login/Login";
 import Home from "../pages/Home";
 import PhishingSimulations from "../pages/PhishingSimulations";
@@ -11,7 +11,7 @@ export const Routes = () => {
   if (!userLoggedIn) {
     return (
       <Switch>
-        {/* <Route path="/styleguide" component={StyleGuide} /> */}
+        <Route path="/styleguide" component={StyleGuide} />
         <Route path="/login" component={Login} />
         <Route path="/phishing-simulations" component={PhishingSimulations} />
         <Redirect to="/login" />
@@ -20,7 +20,7 @@ export const Routes = () => {
   }
   return (
     <Switch>
-      {/* <Route path="/styleguide" component={StyleGuide} /> */}
+      <Route path="/styleguide" component={StyleGuide} />
       <Route path="/home" component={Home} />
       <Route path="/phishing-simulations" component={PhishingSimulations} />
       <Route path="/development" component={DeveloperWindow} />

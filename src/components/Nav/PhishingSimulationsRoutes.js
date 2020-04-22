@@ -8,6 +8,7 @@ import TuneIcon from "@material-ui/icons/Tune";
 import { PhishingIcon } from "../../assets/svg/PhishingIcon";
 import Campaigns from "../Campaigns/Campaigns";
 import AddCampaign from "../AddCampaign/AddCampaign";
+import Settings from "../Settings/Settings";
 
 export const phishingSimulationsRoutes = {
   Campaigns: "campaigns",
@@ -55,7 +56,7 @@ export const phishingSimulationsRouteToComponent = (route) => {
     case phishingSimulationsRoutes.Reports:
       return React.Fragment;
     case phishingSimulationsRoutes.Settings:
-      return React.Fragment;
+      return Settings;
     default:
       return null;
   }

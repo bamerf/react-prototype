@@ -1,6 +1,6 @@
 import React from "react";
-import { VerticalLinkButtonGroup } from "../VerticalLinkButtonGroup/VerticalLinkButtonGroup";
-import { TabLinkButton } from "../TabLinkButton/TabLinkButton";
+import VerticalLinkButtonGroup from "../VerticalLinkButtonGroup/VerticalLinkButtonGroup";
+import TabLinkButton from "../TabLinkButton/TabLinkButton";
 import {
   phishingSimulationsRouteToName,
   phishingSimulationsRoutes,

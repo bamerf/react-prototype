@@ -45,10 +45,6 @@ const useStyles = makeStyles(
         marginBottom: rem(16),
       },
     },
-    button: {
-      height: rem(55),
-      width: rem(100),
-    },
     inputLabel: {
       marginTop: rem(15),
     },
@@ -104,7 +100,7 @@ export default function LoginForm() {
           <Typography variant="h6">
             <Link className={styles.link}>Forgotten your password?</Link>
           </Typography>
-          <Button kind="primary" type="submit" className={styles.button}>
+          <Button thick={true} kind="primary" type="submit">
             Login
           </Button>
         </div>

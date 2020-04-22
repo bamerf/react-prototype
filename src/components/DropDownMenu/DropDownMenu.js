@@ -54,7 +54,7 @@ const useStyles = makeStyles(
       position: "absolute",
       padding: `${rem(8)} 0`,
       boxShadow: boxShadowOn,
-      top: rem(30),
+      top: rem(65),
       zIndex: 2,
       backgroundColor: fade(colors.white, 1),
       borderRadius: 5,
@@ -99,11 +99,7 @@ export default function DropDownMenu(props) {
   };
 
   return (
-    <div
-      className={styles.menuParent}
-      onMouseEnter={hoverOn}
-      onMouseLeave={hoverOff}
-    >
+    <div className={styles.menuParent} onMouseEnter={hoverOn}>
       {props.path === "Awareness posters" ? (
         <div className={styles.linkParent}>
           <Typography
@@ -121,23 +117,26 @@ export default function DropDownMenu(props) {
           <KeyboardArrowDownIcon className={styles.arrow} />
         </div>
       )}
-      <div
-        className={styles.menuContainer}
-        style={{
-          opacity: showMenu,
-        }}
-      >
-        {pathNames.map((path) => {
-          return (
-            <div>
-              <Link variant="body2" className={styles.links}>
-                {path}
-              </Link>
-              <br></br>
-            </div>
-          );
-        })}
-      </div>
+      {showMenu ? (
+        <div
+          className={styles.menuContainer}
+          style={{
+            opacity: showMenu,
+          }}
+          onMouseLeave={hoverOff}
+        >
+          {pathNames.map((path) => {
+            return (
+              <div>
+                <Link variant="body2" className={styles.links}>
+                  {path}
+                </Link>
+                <br></br>
+              </div>
+            );
+          })}
+        </div>
+      ) : null}
     </div>
   );
 }

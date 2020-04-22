@@ -15,7 +15,7 @@ const useStyles = makeStyles(
   { name: "VerticalLinkButtonGroup" }
 );
 
-export const VerticalLinkButtonGroup = (props) => {
+export default function VerticalLinkButtonGroup(props) {
   const styles = useStyles(props);
 
   return (
@@ -23,4 +23,4 @@ export const VerticalLinkButtonGroup = (props) => {
       <div className={styles.wrapper}>{props.children}</div>
     </div>
   );
-};
+}

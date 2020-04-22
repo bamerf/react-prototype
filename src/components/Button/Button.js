@@ -25,6 +25,9 @@ const useStyles = makeStyles(
         color: colors.gray1,
       },
     },
+    thick: {
+      padding: rem(20),
+    },
   },
   { name: "Button" }
 );
@@ -38,8 +41,18 @@ const secondaryButtonDefaultProps = {
   variant: "outlined",
 };
 
-export default function Button({ kind = "primary", className, ...rest }) {
-  const { secondary: secondaryStyle, ...classes } = useStyles();
+export default function Button({
+  kind = "primary",
+  className,
+  thick = false,
+  ...rest
+}) {
+  const {
+    secondary: secondaryStyle,
+    thick: thickStyle,
+    ...classes
+  } = useStyles();
+
   const defaultProps =
     kind === "primary"
       ? primaryButtonDefaultProps
@@ -49,6 +62,7 @@ export default function Button({ kind = "primary", className, ...rest }) {
     <MuiButton
       className={classnames(
         { [secondaryStyle]: kind === "secondary" },
+        { [thickStyle]: thick === true },
         className
       )}
       classes={classes}

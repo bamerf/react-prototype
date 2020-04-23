@@ -1,4 +1,4 @@
-const baseUrl = "https://a.cyberaware.com";
+const baseUrl = process.env_REACT_APP_BASE_URL;
 
 export const brand = {
   qbe: `${baseUrl}/brand/cyberaware.qbe.com`,

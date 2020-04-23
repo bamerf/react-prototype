@@ -29,6 +29,7 @@ function App() {
   const brandColor = "";
   const brandRequestSuccess = true;
 
+  // Theme options are set in theme.js
   const theme = useMemo(() => {
     return createMuiTheme({
       ...globalThemeOptions,

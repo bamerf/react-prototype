@@ -9,6 +9,7 @@ import { PhishingIcon } from "../../assets/svg/PhishingIcon";
 import Campaigns from "../Campaigns/Campaigns";
 import AddCampaign from "../AddCampaign/AddCampaign";
 import Settings from "../Settings/Settings";
+import ManageTemplates from "../ManageTemplates/ManageTemplates";
 
 export const phishingSimulationsRoutes = {
   Campaigns: "campaigns",
@@ -48,7 +49,7 @@ export const phishingSimulationsRouteToComponent = (route) => {
     case phishingSimulationsRoutes.AddCampaign:
       return AddCampaign;
     case phishingSimulationsRoutes.ManageTemplate:
-      return React.Fragment;
+      return ManageTemplates;
     case phishingSimulationsRoutes.ManageRecipients:
       return React.Fragment;
     case phishingSimulationsRoutes.SendingGroups:

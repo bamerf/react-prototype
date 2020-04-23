@@ -1,12 +1,13 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Paper, Typography } from "@material-ui/core";
+import React, { useState } from "react";
+import { makeStyles, Typography } from "@material-ui/core";
 import { colors } from "../../data/colors";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { AssignmentInd, Assignment } from "@material-ui/icons";
 import { createBorderTop, rem, boxShadowRight } from "../../helpers/style";
 import Button from "../Button/Button";
+import Templates from "../ManageTemplates/Templates";
 import { Add } from "@material-ui/icons";
+import classnames from "classnames";
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -17,7 +18,8 @@ const useStyles = makeStyles(
       backgroundColor: colors.backgroundGray,
       borderTop: `4px solid ${colors.backgroundGray}`,
       outline: "none",
-      borderRadius: rem(4),
+      borderTopLeftRadius: rem(4),
+      borderTopRightRadius: rem(4),
       borderBottom: "none",
       boxShadow: boxShadowRight,
       justifyContent: "center",
@@ -42,24 +44,13 @@ const useStyles = makeStyles(
         },
       },
     },
-    contentContainer: {
-      width: rem(900),
-      height: rem(400),
-      overflow: "auto",
-    },
-    contentHeader: {
-      width: "100%",
-      flexGrow: 1,
-      height: rem(50),
-      backgroundColor: colors.gray6,
-      marginTop: rem(20),
-    },
     icon: {
       paddingRight: rem(10),
     },
     button: {
       float: "right",
       marginTop: rem(10),
+      marginRight: rem(15),
       backgroundColor: colors.backgroundGray,
     },
   }),
@@ -68,21 +59,26 @@ const useStyles = makeStyles(
 
 export default function ManageTemplates() {
   const styles = useStyles();
+  const [isSelected, setIsSelected] = useState("tab1");
+
+  const getClass = (classname) => {
+    if (classname === isSelected) return "selected";
+  };
 
   return (
     <div>
       <Tabs>
         <TabList className={styles.tabList}>
           <Tab
-            className={styles.tab}
-            onClick={(e) => e.target.classList.add("selected")}
+            className={classnames(styles.tab, getClass("tab1"))}
+            onClick={() => setIsSelected("tab1")}
           >
             <AssignmentInd className={styles.icon} />{" "}
             <Typography variant="body2">My templates</Typography>
           </Tab>
           <Tab
-            className={styles.tab}
-            onClick={(e) => e.target.classList.add("selected")}
+            className={classnames(styles.tab, getClass("tab2"))}
+            onClick={() => setIsSelected("tab2")}
           >
             <Assignment className={styles.icon} />{" "}
             <Typography variant="body2">System templates</Typography>
@@ -96,23 +92,10 @@ export default function ManageTemplates() {
           </Button>
         </TabList>
         <TabPanel>
-          <Paper
-            className={styles.contentContainer}
-            elevation={3}
-            variant="outlines"
-          >
-            <div className={styles.contentHeader}></div>
-            <h2>Any content 1</h2>
-          </Paper>
+          <Templates />
         </TabPanel>
         <TabPanel>
-          <Paper
-            style={{ width: rem(900), height: rem(400) }}
-            elevation={3}
-            variant="outlines"
-          >
-            <h2>Any content 2</h2>
-          </Paper>
+          <Templates />
         </TabPanel>
       </Tabs>
     </div>

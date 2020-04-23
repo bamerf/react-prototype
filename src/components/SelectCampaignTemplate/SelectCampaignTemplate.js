@@ -1,8 +1,8 @@
 import React from "react";
 import ModalWindow from "../Modals/ModalWindow";
 import SelectCampaignHeader from "./SelectCampaignHeader";
-import TemplateContainer from "../TemplateContainer/TemplateContainer";
-import TemplateItem from "../TemplateContainer/TemplateItem";
+import TemplateContainer from "./TemplateContainer";
+import TemplateItem from "./TemplateItem";
 
 export default function SelectCampaignTemplate({ open, callBack }) {
   return (

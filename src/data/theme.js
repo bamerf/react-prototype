@@ -79,9 +79,6 @@ export const globalThemeOptions = {
         ...sharedBodyStyles,
         fontSize: rem(14),
       },
-      b: {
-        fontWeight: 800,
-      },
       button: {
         fontWeight: 500,
         label: {

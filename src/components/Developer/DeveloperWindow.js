@@ -2,13 +2,15 @@ import React from "react";
 // import HeaderNav from "../Nav/HeaderNav";
 // import ModalWindow from "../Modals/ModalWindow";
 // import GenerateInviteLink from "../Modals/GenerateInviteLink";
-import ResendWelcomeEmails from "../Modals/ResendWelcomeEmails";
+// import ResendWelcomeEmails from "../Modals/ResendWelcomeEmails";
+import ManageTemaples from "../ManageTemplates/ManageTemplates";
 
 export default function DeveloperWindow() {
   return (
     <div style={styles}>
-      <ResendWelcomeEmails />
+      {/* <ResendWelcomeEmails /> */}
       {/* <GenerateInviteLink /> */}
+      <ManageTemaples />
     </div>
   );
 }
@@ -16,6 +18,6 @@ export default function DeveloperWindow() {
 const styles = {
   display: "flex",
   height: "100vh",
-  justifiyContent: "center",
+  justifyContent: "center",
   marginTop: "10rem",
 };

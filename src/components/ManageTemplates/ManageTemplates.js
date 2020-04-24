@@ -55,12 +55,15 @@ const systemTemplates = [
   },
 ];
 
+const transitionDuration = 300;
+
 const useStyles = makeStyles(
   (theme) => ({
     tab: {
       width: rem(200),
       height: rem(55),
       display: "inline-flex",
+      transition: `all ${transitionDuration}ms`,
       backgroundColor: colors.backgroundGray,
       borderTop: `4px solid ${colors.backgroundGray}`,
       outline: "none",
@@ -87,6 +90,7 @@ const useStyles = makeStyles(
         },
         "& svg": {
           color: theme.palette.primary.main,
+          transition: `all ${transitionDuration}ms`,
         },
       },
     },

@@ -5,9 +5,55 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { AssignmentInd, Assignment } from "@material-ui/icons";
 import { createBorderTop, rem, boxShadowRight } from "../../helpers/style";
 import Button from "../Button/Button";
-import Templates from "../ManageTemplates/Templates";
+import Templates from "./Templates";
+import Template from "./Template";
 import { Add } from "@material-ui/icons";
 import classnames from "classnames";
+
+const myTemplates = [
+  {
+    name: "Bank Transfer",
+    description: "Internal Bank Transfer Phishing Simulation",
+  },
+  { name: "Internal IT Support", description: "Internal IT Support Request" },
+  {
+    name: "Bank Transfer",
+    description: "Internal Bank Transfer Phishing Simulation",
+  },
+];
+
+const systemTemplates = [
+  { name: "Xero Login", description: "Request to restet XERO login" },
+  {
+    name: "Google Password Expired",
+    description: "Google Apps password has expired",
+  },
+  {
+    name: "Netflix - Restart Your Memebership",
+    description:
+      "Netflix subscription has expired and a request to login and re-activate",
+  },
+  { name: "Xero Login", description: "Request to restet XERO login" },
+  {
+    name: "Google Password Expired",
+    description: "Google Apps password has expired",
+  },
+  {
+    name: "Netflix - Restart Your Memebership",
+    description:
+      "Netflix subscription has expired and a request to login and re-activate",
+  },
+  { name: "Xero Login", description: "Request to restet XERO login" },
+  {
+    name: "Google Password Expired",
+    description: "Google Apps password has expired",
+  },
+  {
+    name: "Netflix - Restart Your Memebership",
+    description:
+      "Netflix subscription has expired and a request to login and re-activate",
+  },
+];
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -52,6 +98,9 @@ const useStyles = makeStyles(
       marginTop: rem(10),
       marginRight: rem(15),
       backgroundColor: colors.backgroundGray,
+      "& span": {
+        color: `${colors.gray3} !important`,
+      },
     },
   }),
   { name: "ManageTemplates" }
@@ -92,10 +141,27 @@ export default function ManageTemplates() {
           </Button>
         </TabList>
         <TabPanel>
-          <Templates />
+          <Templates>
+            {myTemplates.map(({ name, description }, index) => {
+              return (
+                <Template name={name} description={description} key={index} />
+              );
+            })}
+          </Templates>
         </TabPanel>
         <TabPanel>
-          <Templates />
+          <Templates>
+            {systemTemplates.map(({ name, description }, index) => {
+              return (
+                <Template
+                  name={name}
+                  description={description}
+                  key={index}
+                  kind="systemTemplate"
+                />
+              );
+            })}
+          </Templates>
         </TabPanel>
       </Tabs>
     </div>

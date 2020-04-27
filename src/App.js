@@ -25,7 +25,7 @@ const useStyles = makeStyles(
 
 function App() {
   const styles = useStyles();
-  // const brandColor = "#f2c94c";
+  // const brandColor = "#009ae4";
   const brandColor = "";
   const brandRequestSuccess = true;
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles, Typography, Grid, Divider } from "@material-ui/core";
 import { Visibility, Create, Clear } from "@material-ui/icons";
+import Tooltip from "../Tooltip/Tooltip";
 import { rem } from "../../helpers/style";
 import { colors } from "../../data/colors";
 
@@ -48,12 +49,20 @@ export default function Template({ kind, name, description }) {
         </Grid>
         <Grid item xs={2} className={styles.icon}>
           {kind === "systemTemplate" ? (
-            <Visibility />
+            <Tooltip title="Preview">
+              <Visibility />
+            </Tooltip>
           ) : (
             <div className={styles.iconsContainer}>
-              <Visibility />
-              <Create />
-              <Clear />
+              <Tooltip title="Preview">
+                <Visibility />
+              </Tooltip>
+              <Tooltip title="Edit">
+                <Create />
+              </Tooltip>
+              <Tooltip title="Remove">
+                <Clear />
+              </Tooltip>
             </div>
           )}
         </Grid>

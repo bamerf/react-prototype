@@ -12,10 +12,10 @@ const useStyles = makeStyles(
     },
     gridContainer: {
       height: "100%",
-      marginBottom: rem(5),
+      marginBottom: rem(7),
     },
     gridTitle: {
-      marginTop: rem(5),
+      marginTop: rem(10),
       paddingLeft: rem(20),
     },
     title: {
@@ -29,7 +29,6 @@ const useStyles = makeStyles(
     },
     button: {
       marginRight: rem(15),
-      padding: `${rem(15)} ${rem(20)}`,
     },
   }),
   {
@@ -53,7 +52,9 @@ export default function TemplateItem({ rating, title, description }) {
         <Grid item xs={4}>
           <div className={styles.rightSection}>
             <RatingCircles rating={rating} />
-            <Button className={styles.button}>Select</Button>
+            <Button className={styles.button} thick={true} kind="primary">
+              Select
+            </Button>
           </div>
         </Grid>
       </Grid>

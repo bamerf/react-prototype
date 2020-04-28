@@ -1,16 +1,14 @@
 import React from "react";
-// import HeaderNav from "../Nav/HeaderNav";
-// import ModalWindow from "../Modals/ModalWindow";
 // import GenerateInviteLink from "../Modals/GenerateInviteLink";
 // import ResendWelcomeEmails from "../Modals/ResendWelcomeEmails";
-import ManageTemaples from "../ManageTemplates/ManageTemplates";
+import Switch from "../Switch/Switch";
 
 export default function DeveloperWindow() {
   return (
     <div style={styles}>
       {/* <ResendWelcomeEmails /> */}
       {/* <GenerateInviteLink /> */}
-      <ManageTemaples />
+      <Switch />
     </div>
   );
 }

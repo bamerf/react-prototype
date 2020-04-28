@@ -8,6 +8,7 @@ export default function DeveloperWindow() {
     <div style={styles}>
       {/* <ResendWelcomeEmails /> */}
       {/* <GenerateInviteLink /> */}
+      <Switch kind="round" />
       <Switch />
     </div>
   );

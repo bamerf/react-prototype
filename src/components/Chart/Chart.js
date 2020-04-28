@@ -123,7 +123,7 @@ export default function Chart() {
           />
           <YAxis
             yAxisId="right"
-            hide="true"
+            hide={true}
             axisLine={false}
             tickLine={false}
             tickMargin={32}

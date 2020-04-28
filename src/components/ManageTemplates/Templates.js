@@ -38,7 +38,7 @@ export default function Templates({ children }) {
   const styles = useStyles();
 
   return (
-    <Paper className={styles.contentContainer} variant="outlines">
+    <Paper className={styles.contentContainer} variant="elevation">
       <div className={styles.contentHeader}>
         <Grid container className={styles.grid}>
           <Grid item xs={3}>

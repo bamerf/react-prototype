@@ -44,7 +44,7 @@ export default function PhishingSimulations({ match }) {
         <Banner />
         <div className={styles.content}>
           <Grid container className={styles.mainContent} spacing={3}>
-            <Grid item xs={13} md={3}>
+            <Grid item xs={12} md={3}>
               <PhishingSimulationsNav />
             </Grid>
             <Grid

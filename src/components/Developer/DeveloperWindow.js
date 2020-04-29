@@ -1,15 +1,12 @@
 import React from "react";
 // import GenerateInviteLink from "../Modals/GenerateInviteLink";
 // import ResendWelcomeEmails from "../Modals/ResendWelcomeEmails";
-import Switch from "../Switch/Switch";
 
 export default function DeveloperWindow() {
   return (
     <div style={styles}>
       {/* <ResendWelcomeEmails /> */}
       {/* <GenerateInviteLink /> */}
-      <Switch kind="round" />
-      <Switch />
     </div>
   );
 }

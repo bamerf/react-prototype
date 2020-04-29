@@ -28,6 +28,15 @@ const useStyles = makeStyles(
     thick: {
       padding: rem(20),
     },
+    elevated: {
+      backgroundColor: colors.white,
+      "& $label": {
+        color: colors.gray1,
+      },
+      "&:hover": {
+        backgroundColor: colors.gray6,
+      },
+    },
   },
   { name: "Button" }
 );
@@ -45,11 +54,13 @@ export default function Button({
   kind = "primary",
   className,
   thick = false,
+  elevated = false,
   ...rest
 }) {
   const {
     secondary: secondaryStyle,
     thick: thickStyle,
+    elevated: elevatedStyle,
     ...classes
   } = useStyles();
 
@@ -63,6 +74,7 @@ export default function Button({
       className={classnames(
         { [secondaryStyle]: kind === "secondary" },
         { [thickStyle]: thick === true },
+        { [elevatedStyle]: elevated === true },
         className
       )}
       classes={classes}

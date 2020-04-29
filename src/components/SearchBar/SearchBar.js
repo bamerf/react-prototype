@@ -1,13 +1,8 @@
 import React from "react";
-import {
-  makeStyles,
-  TextField,
-  InputAdornment,
-  IconButton,
-} from "@material-ui/core";
+import { makeStyles, TextField, InputAdornment } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
-import { colors } from "../../data/colors";
 import { rem } from "../../helpers/style";
+import IconButton from "../IconButton/IconButton";
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -17,13 +12,6 @@ const useStyles = makeStyles(
         padding: rem(0),
         height: rem(42),
       },
-    },
-    iconButton: {
-      padding: rem(5),
-      marginLeft: rem(5),
-    },
-    icon: {
-      color: colors.gray4,
     },
   }),
   {
@@ -41,7 +29,7 @@ export default function SearchBar() {
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <IconButton component="span" className={styles.iconButton}>
+            <IconButton className={styles.iconButton}>
               <Search className={styles.icon} />
             </IconButton>
           </InputAdornment>

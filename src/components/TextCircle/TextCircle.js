@@ -2,11 +2,18 @@ import React from "react";
 import { makeStyles, Typography } from "@material-ui/core";
 import { colors } from "../../data/colors";
 import { rem } from "../../helpers/style";
+import classnames from "classnames";
 
 const circleRadiusSize = 90;
 
 const useStyles = makeStyles(
-  {
+  (theme) => ({
+    root: {
+      width: "max-content",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    },
     circle: {
       width: rem(circleRadiusSize),
       height: rem(circleRadiusSize),
@@ -14,6 +21,12 @@ const useStyles = makeStyles(
       borderRadius: "50%",
       position: "relative",
       marginBottom: rem(16),
+    },
+    completed: {
+      backgroundColor: theme.palette.primary.main,
+      "& p": {
+        color: colors.white,
+      },
     },
     text: {
       fontSize: rem(18),
@@ -29,18 +42,27 @@ const useStyles = makeStyles(
       fontSize: rem(12),
       fontWeight: 500,
       lineHeight: 1,
-      textAlign: "center",
     },
-  },
+  }),
   { name: "TextCircle" }
 );
 
-export const TextCircle = ({ text, title, className }) => {
-  const styles = useStyles();
+export default function TextCircle({
+  text,
+  title,
+  className,
+  completed = false,
+}) {
+  const { completed: completedStyle, ...styles } = useStyles();
 
   return (
-    <div className={className}>
-      <div className={styles.circle}>
+    <div className={classnames(styles.root, className)}>
+      <div
+        className={classnames(
+          { [completedStyle]: completed === true },
+          styles.circle
+        )}
+      >
         <Typography variant="body2" className={styles.text}>
           {text}
         </Typography>
@@ -50,4 +72,4 @@ export const TextCircle = ({ text, title, className }) => {
       </Typography>
     </div>
   );
-};
+}

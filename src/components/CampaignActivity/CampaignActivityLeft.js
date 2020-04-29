@@ -2,8 +2,8 @@ import React from "react";
 import { makeStyles, Typography, fade } from "@material-ui/core";
 import classnames from "classnames";
 import { colors } from "../../data/colors";
-import { TextCircle } from "../TextCircle/TextCircle";
-import { PercentCircle } from "../PercentCircle/PercentCircle";
+import TextCircle from "../TextCircle/TextCircle";
+import PercentCircle from "../PercentCircle/PercentCircle";
 import { rem } from "../../helpers/style";
 
 const useStyles = makeStyles(
@@ -40,7 +40,7 @@ const useStyles = makeStyles(
     dateCompleted: {
       // color: "inherit",
       fontSize: rem(13),
-      color : "rgb(255, 255, 255,0.7)",
+      color: "rgb(255, 255, 255,0.7)",
       marginBottom: rem(20),
       lineHeight: 1,
     },

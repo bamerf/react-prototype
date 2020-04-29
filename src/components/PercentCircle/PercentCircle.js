@@ -55,7 +55,7 @@ const useStyles = makeStyles(
   { name: "PercentCircle" }
 );
 
-export const PercentCircle = (props) => {
+export default function PercentCircle(props) {
   const styles = useStyles(props);
 
   const getCircleType = (title) => {
@@ -100,4 +100,4 @@ export const PercentCircle = (props) => {
       </Typography>
     </div>
   );
-};
+}

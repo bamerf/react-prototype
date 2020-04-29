@@ -34,9 +34,9 @@ export default function Buttons() {
       <Button thick={true} kind="secondary">
         Secondary thick
       </Button>
-      <Button elevated={true}>Primary elevated</Button>
+      <Button elevated={true}>Elevated</Button>
       <Button thick={true} elevated={true}>
-        Primary elevated thick
+        Elevated thick
       </Button>
       <div className={styles.iconButtons}>
         <IconButton>

@@ -14,7 +14,7 @@ import { boxShadowOn, rem } from "../../helpers/style";
 import { colors } from "../../data/colors";
 
 const useStyles = makeStyles(
-  () => ({
+  (theme) => ({
     chartContainer: {
       marginBottom: rem(41),
       width: "100%",
@@ -27,7 +27,7 @@ const useStyles = makeStyles(
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      fontFamily: "Nunito",
+      fontFamily: theme.typography.fontFamily,
       fontSize: 12,
     },
   }),

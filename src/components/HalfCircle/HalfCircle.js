@@ -1,10 +1,10 @@
 import React from "react";
-import { makeStyles, Typography, fade } from "@material-ui/core";
+import { makeStyles, Typography } from "@material-ui/core";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { colors } from "../../data/colors";
 import { rem } from "../../helpers/style";
 
-const circleRadiusSize = 90;
+const circleRadiusSize = 100;
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -14,46 +14,53 @@ const useStyles = makeStyles(
       borderRadius: "50%",
       position: "relative",
       marginBottom: rem(16),
+      backgroundColor: colors.gray6,
       "& :nth-child(2)": {
-        transform: "rotate(90deg) !important",
+        transform: "rotate(180deg) !important",
       },
     },
-    text: ({ white }) => ({
-      fontSize: rem(18),
+    text: {
+      width: rem(100),
+      fontSize: rem(14),
       fontWeight: 600,
-      color: white ? colors.white : colors.gray1,
+      color: colors.gray1,
       position: "absolute",
-      top: "49%",
-      left: "53%",
-      transform: "translate(-50%, -50%)",
-    }),
-    title: ({ white }) => ({
-      color: white ? colors.white : colors.gray2,
-      fontWeight: 500,
-      fontSize: rem(13),
-      lineHeight: 1,
+      top: rem(18),
       textAlign: "center",
-    }),
-    fullCircle: ({ white }) => ({
-      color: white ? fade(colors.gray6, 0.2) : fade(colors.gray6, 0.5),
+    },
+    title: {
+      width: rem(100),
+      fontSize: rem(12),
+      position: "absolute",
+      top: rem(35),
+      textAlign: "center",
+    },
+    fullCircle: {
+      color: colors.gray5,
       position: "absolute",
       right: rem(0),
-    }),
-    progressCircle: ({ white, light }) => ({
-      color: white
-        ? "white"
-        : light
-        ? fade(theme.palette.primary.main, 0.4)
-        : theme.palette.primary.main,
+    },
+    progressCircle: {
+      color: theme.palette.primary.main,
       "& svg": {
         strokeLinecap: "round",
       },
-    }),
+    },
+    halfCircle: {
+      width: rem(100),
+      height: rem(53),
+      backgroundColor: colors.white,
+      borderBottomLeftRadius: rem(90),
+      borderBottomRightRadius: rem(90),
+      position: "absolute",
+      top: rem(50),
+      right: rem(0),
+    },
   }),
   { name: "PercentCircle" }
 );
 
-export default function PercentCircle(props) {
+export default function HalfCircle(props) {
   const styles = useStyles(props);
 
   const { percentage, title, className } = props;
@@ -69,17 +76,18 @@ export default function PercentCircle(props) {
         />
         <CircularProgress
           variant="static"
-          value={percentage}
+          value={percentage / 2}
           size={circleRadiusSize}
           className={styles.progressCircle}
         />
+        <div className={styles.halfCircle}></div>
         <Typography variant="body2" className={styles.text}>
           {percentage}%
         </Typography>
+        <Typography variant="body2" className={styles.title}>
+          {title}
+        </Typography>
       </div>
-      <Typography variant="body2" className={styles.title}>
-        {title}
-      </Typography>
     </div>
   );
 }

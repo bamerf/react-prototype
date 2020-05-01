@@ -14,7 +14,7 @@ const navItems = [
   { name: "colors", Icon: PaletteIcon },
   { name: "switches", Icon: ToggleOn },
   { name: "progress-circles", Icon: TrackChanges },
-  { name: "area-chart", Icon: ShowChart },
+  { name: "charts", Icon: ShowChart },
 ];
 
 export default function Nav({ match }) {

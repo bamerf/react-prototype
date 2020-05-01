@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, useTheme, fade } from "@material-ui/core";
+import { makeStyles, useTheme, fade, Paper } from "@material-ui/core";
 import {
   Line,
   XAxis,
@@ -15,15 +15,12 @@ import { colors } from "../../data/colors";
 
 const useStyles = makeStyles(
   (theme) => ({
-    chartContainer: {
+    root: {
       marginBottom: rem(41),
       width: "100%",
       height: rem(642),
       minHeight: rem(285),
-      backgroundColor: colors.white,
-      borderRadius: 4,
       boxShadow: boxShadowOn,
-      overflow: "hidden",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
@@ -34,63 +31,12 @@ const useStyles = makeStyles(
   { name: "Chart" }
 );
 
-export default function Chart() {
+export default function Chart({ data }) {
   const styles = useStyles();
   const theme = useTheme();
-  const data = [
-    {
-      date: "01/07",
-      Risk: 4,
-      Trained: 1,
-      Opened: 1,
-      Sent: 2,
-    },
-    {
-      date: "02/06",
-      Risk: 0,
-      Trained: 0,
-      Opened: 2,
-      Sent: 2,
-    },
-    {
-      date: "06/09",
-      Risk: 4,
-      Trained: 1,
-      Opened: 1,
-      Sent: 2,
-    },
-    {
-      date: "12/09",
-      Risk: 0,
-      Trained: 1,
-      Opened: 2,
-      Sent: 3,
-    },
-    {
-      date: "04/10",
-      Risk: 0,
-      Trained: 0,
-      Opened: 1,
-      Sent: 1,
-    },
-    {
-      date: "07/11",
-      Risk: 8,
-      Trained: 3,
-      Opened: 3,
-      Sent: 4,
-    },
-    {
-      date: "31/01",
-      Risk: 28,
-      Trained: 2,
-      Opened: 2,
-      Sent: 4,
-    },
-  ];
 
   return (
-    <div className={styles.chartContainer}>
+    <Paper className={styles.root}>
       <ResponsiveContainer width={"90%"} height={"90%"}>
         <ComposedChart
           data={data}
@@ -117,7 +63,7 @@ export default function Chart() {
             yAxisId="left"
             axisLine={false}
             tickLine={false}
-            tickMargin={32}
+            tickMargin={15}
             unit="%"
             stroke={colors.gray4}
           />
@@ -129,8 +75,16 @@ export default function Chart() {
             tickMargin={32}
             unit="%"
             stroke={colors.gray4}
+            domain={[0, "dataMax + 10"]}
           />
           <Legend verticalAlign="top" align="right" height={50} iconSize={20} />
+          <Legend
+            verticalAlign="top"
+            align="right"
+            height={50}
+            iconSize={20}
+            iconType="circle"
+          />
 
           <Bar
             dataKey="Trained"
@@ -165,6 +119,6 @@ export default function Chart() {
           />
         </ComposedChart>
       </ResponsiveContainer>
-    </div>
+    </Paper>
   );
 }

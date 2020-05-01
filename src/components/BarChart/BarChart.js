@@ -1,9 +1,9 @@
 import React from "react";
 import { Paper, makeStyles, useTheme, Typography } from "@material-ui/core";
 import {
-  AreaChart as ReAreaChart,
+  BarChart as ReBarChart,
   ResponsiveContainer,
-  Area,
+  Bar,
   YAxis,
   XAxis,
   CartesianGrid,
@@ -34,24 +34,23 @@ const useStyles = makeStyles(
       right: rem(70),
     },
     legendIcon: {
-      width: rem(20),
-      height: rem(20),
+      width: rem(18),
+      height: rem(18),
       backgroundColor: theme.palette.primary.main,
-      borderRadius: "50%",
       marginRight: rem(10),
     },
   }),
   { name: "AreaChart" }
 );
 
-export default function AreaChart({ data }) {
+export default function BarChart({ data }) {
   const styles = useStyles();
   const theme = useTheme();
 
   return (
     <Paper className={styles.root}>
       <ResponsiveContainer width={"90%"} height={"90%"}>
-        <ReAreaChart
+        <ReBarChart
           data={data}
           margin={{
             top: 60,
@@ -60,18 +59,12 @@ export default function AreaChart({ data }) {
             bottom: 20,
           }}
         >
-          <CartesianGrid
-            vertical={false}
-            stroke={colors.gray5}
-            className={styles.chartGrid}
-          />
-          <Area
-            dataKey={"count"}
-            stroke={theme.palette.primary.main}
+          <CartesianGrid vertical={false} stroke={colors.gray5} />
+          <Bar
+            dataKey="count"
             fill={theme.palette.primary.main}
-            fillOpacity="1"
+            barSize={150}
           />
-
           <XAxis
             dataKey="month"
             unit=" Months"
@@ -80,7 +73,6 @@ export default function AreaChart({ data }) {
             tickMargin={17}
             stroke={colors.gray4}
           />
-
           <YAxis
             dataKey="count"
             axisLine={false}
@@ -89,7 +81,7 @@ export default function AreaChart({ data }) {
             stroke={colors.gray4}
             domain={[0, "dataMax + 2"]}
           />
-        </ReAreaChart>
+        </ReBarChart>
       </ResponsiveContainer>
       <div className={styles.legendParent}>
         <div className={styles.legendIcon} />

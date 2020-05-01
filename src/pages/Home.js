@@ -13,7 +13,10 @@ export default function Home() {
         You are logged in as user type {userType}
       </Typography>
       <Button onClick={logout}>Logout</Button>
+      <br />
       <Link to="/phishing-simulations">Phishing Simulations</Link>
+      <br/>
+      <Link to="/partner-portal">Partner Portal</Link>
     </Page>
   );
 }

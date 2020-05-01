@@ -19,13 +19,13 @@ const useStyles = makeStyles(
   }
 );
 
-export default function SearchBar() {
+export default function SearchBar({ placeholder }) {
   const styles = useStyles();
   return (
     <TextField
       className={styles.textField}
       variant="outlined"
-      placeholder="Search templates..."
+      placeholder={placeholder}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">

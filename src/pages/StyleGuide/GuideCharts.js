@@ -68,7 +68,7 @@ export default function GuideCharts() {
     <div style={{ width: "100%" }}>
       <Chart data={mainChartData} />
       <AreaChart data={areaChartData} />
-      <AreaChart data={areaChartData} type="basis" />
+      <AreaChart data={areaChartData} type="curved" />
       <BarChart data={areaChartData} />
     </div>
   );

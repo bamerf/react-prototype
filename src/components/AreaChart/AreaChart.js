@@ -70,7 +70,7 @@ export default function AreaChart({ data, type }) {
             stroke={theme.palette.primary.main}
             fill={theme.palette.primary.main}
             fillOpacity="1"
-            type={type || "linear"}
+            type={type === "curved" ? "basis" : "linear"}
           />
 
           <XAxis

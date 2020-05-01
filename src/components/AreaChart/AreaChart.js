@@ -44,7 +44,7 @@ const useStyles = makeStyles(
   { name: "AreaChart" }
 );
 
-export default function AreaChart({ data }) {
+export default function AreaChart({ data, type }) {
   const styles = useStyles();
   const theme = useTheme();
 
@@ -70,6 +70,7 @@ export default function AreaChart({ data }) {
             stroke={theme.palette.primary.main}
             fill={theme.palette.primary.main}
             fillOpacity="1"
+            type={type || "linear"}
           />
 
           <XAxis

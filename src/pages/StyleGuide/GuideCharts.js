@@ -66,9 +66,10 @@ const mainChartData = [
 export default function GuideCharts() {
   return (
     <div style={{ width: "100%" }}>
-      <BarChart data={areaChartData} />
       <Chart data={mainChartData} />
       <AreaChart data={areaChartData} />
+      <AreaChart data={areaChartData} type="basis" />
+      <BarChart data={areaChartData} />
     </div>
   );
 }

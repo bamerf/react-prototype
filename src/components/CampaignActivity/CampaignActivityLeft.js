@@ -72,6 +72,7 @@ export default function CampaignActivityLeft(props) {
           percentage={props.percentCompleted}
           /* TODO: calc "at risk" from props.percentCompleted */
           title="At risk"
+          white
         />
       ) : (
         // TODO: get "22nd" from props.dateScheduled

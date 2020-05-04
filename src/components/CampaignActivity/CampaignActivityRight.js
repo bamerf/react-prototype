@@ -154,12 +154,11 @@ export default function CampaignActivityRight(props) {
               <PercentCircle
                 percentage={props.percentOpened}
                 title="Opened"
-                dark
+                light
               />
               <PercentCircle
                 percentage={props.percentTrained}
                 title="Trained"
-                dark
               />
             </div>
           ) : (

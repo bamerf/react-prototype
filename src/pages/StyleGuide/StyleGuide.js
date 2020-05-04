@@ -8,6 +8,7 @@ import GuideTypography from "./GuideTypography";
 import GuideButtons from "./GuideButtons";
 import GuideSwitches from "./GuideSwitches";
 import GuideProgressCircles from "./GuideProgressCircles";
+import GuideCharts from "./GuideCharts";
 import Header from "../../components/Header/Header";
 import Page from "../../components/Page/Page";
 
@@ -51,9 +52,10 @@ export default function StyleGuide(props) {
               component={GuideSwitches}
             />
             <Route
-              path={`${props.match.url}/progresscircles`}
+              path={`${props.match.url}/progress-circles`}
               component={GuideProgressCircles}
             />
+            <Route path={`${props.match.url}/charts`} component={GuideCharts} />
             <Redirect to={`${props.match.url}/typography`} />
           </Switch>
         </Grid>

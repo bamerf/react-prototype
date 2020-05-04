@@ -2,13 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ManageClientsIcon } from "../../assets/svg/PartnerPortalIcons";
 import { colors } from "../../data/colors";
-import SearchBar from "../SearchBar/SearchBar";
 import { rem, createBorderTop } from "../../helpers/style";
+import Button from "../Button/Button";
+import CustomTable from '../CustomTable';
+import AttachmentIcon from '@material-ui/icons/Attachment';
+import AddIcon from '@material-ui/icons/Add';
+import CloudIcon from '@material-ui/icons/Cloud';
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import AttachmentIcon from "@material-ui/icons/Attachment";
 import AddIcon from "@material-ui/icons/Add";
 import CloudIcon from "@material-ui/icons/Cloud";
 import { Button, Select, FormControl, InputLabel } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -17,16 +22,23 @@ import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
 import TableSortLabel from "@material-ui/core/TableSortLabel";
-import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 
 const paddingSides = 28;
 
-function createData(name, bussines, reseller, date, solution, learned) {
-  return { name, bussines, reseller, date, solution, learned };
-}
-
 const rows = [
+
+  { name: "Graham Chee", bussines: "Knowledge1", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "200 learners" }, 
+  { name: "Graham Chee", bussines: "Knowledge2", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "201 learners" }, 
+  { name: "Graham Chee", bussines: "Knowledge3", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "206 learners" }, 
+  { name: "Graham Chee", bussines: "Knowledge4", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "206 learners" }, 
+  { name: "Graham Chee", bussines: "Knowledge5", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "209 learners" },
+  { name: "Graham Chee", bussines: "Knowledge6", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "223 learners" },
+  { name: "Graham Chee", bussines: "Knowledge7", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "256 learners" },
+  { name: "Graham Chee", bussines: "Knowledge8", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "213 learners" },
+  { name: "Graham Chee", bussines: "Knowledge9", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "211 learners" },
+]
+
   createData(
     "Graham Chee",
     "Knowledge1",
@@ -206,14 +218,6 @@ const useStyles = makeStyles((theme) => ({
   main: {
     padding: rem(paddingSides),
   },
-  tableTop: {
-    paddingTop: rem(paddingSides),
-    paddingBottom: rem(paddingSides),
-  },
-  tableHeader: {
-    color: "red",
-    background: "#F2F2F2",
-  },
   manageTitle: {
     display: "flex",
     alignItems: "center",
@@ -235,6 +239,12 @@ const useStyles = makeStyles((theme) => ({
   manageIcon: {
     paddingRight: 25,
   },
+
+}));
+
+export default function ManageClients() {
+  const styles = useStyles();
+  
   select: {
     minWidth: rem(180),
     marginRight: rem(10),
@@ -312,38 +322,41 @@ export default function ManageClients() {
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
+
   return (
-    <div className={classes.root}>
-      <div className={classes.top}>
-        <div className={classes.manageTitle}>
-          <ManageClientsIcon className={classes.manageIcon} />
+    <div className={styles.root}>
+      <div className={styles.top}>
+        <div className={styles.manageTitle}>
+          <ManageClientsIcon className={styles.manageIcon} />
           <Typography variant="h4">Manage Clients</Typography>
         </div>
-        <div className={classes.buttonsWrapper}>
+        <div className={styles.buttonsWrapper}>
           <Button
             kind="secondary"
-            className={classes.manageButton}
-            startIcon={
-              <AttachmentIcon className={classes.sendIcon} size="small" />
-            }
+            className={styles.manageButton}
+            startIcon={<AttachmentIcon className={styles.sendIcon} size="small" />}
           >
             Shareable Link
           </Button>
           <Button
             kind="secondary"
-            className={classes.manageButton}
-            startIcon={<AddIcon className={classes.sendIcon} size="small" />}
+            className={styles.manageButton}
+            startIcon={<AddIcon className={styles.sendIcon} size="small" />}
           >
             Add Client
           </Button>
           <Button
             kind="secondary"
-            className={classes.manageButton}
-            startIcon={<CloudIcon className={classes.sendIcon} size="small" />}
+            className={styles.manageButton}
+            startIcon={<CloudIcon className={styles.sendIcon} size="small" />}
           >
             Add Client
           </Button>
         </div>
+
+      </div >
+      <div className={styles.main}>
+        <CustomTable rows={rows}/>
       </div>
       <div className={classes.main}>
         <Paper className={classes.paper}>

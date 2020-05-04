@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ManageClientsIcon } from "../../assets/svg/PartnerPortalIcons";
 import { colors } from "../../data/colors";
 import { rem, createBorderTop } from "../../helpers/style";
@@ -9,14 +9,15 @@ import AddIcon from '@material-ui/icons/Add';
 import CloudIcon from '@material-ui/icons/Cloud';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import AddClientTemplate from "../AddClientTemplate";
 
 const paddingSides = 28;
 
 const rows = [
-  { name: "Graham Chee", bussines: "Knowledge1", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "200 learners" }, 
-  { name: "Graham Chee", bussines: "Knowledge2", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "201 learners" }, 
-  { name: "Graham Chee", bussines: "Knowledge3", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "206 learners" }, 
-  { name: "Graham Chee", bussines: "Knowledge4", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "206 learners" }, 
+  { name: "Graham Chee", bussines: "Knowledge1", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "200 learners" },
+  { name: "Graham Chee", bussines: "Knowledge2", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "201 learners" },
+  { name: "Graham Chee", bussines: "Knowledge3", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "206 learners" },
+  { name: "Graham Chee", bussines: "Knowledge4", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "206 learners" },
   { name: "Graham Chee", bussines: "Knowledge5", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "209 learners" },
   { name: "Graham Chee", bussines: "Knowledge6", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "223 learners" },
   { name: "Graham Chee", bussines: "Knowledge7", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "256 learners" },
@@ -67,7 +68,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ManageClients() {
   const styles = useStyles();
-  
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div className={styles.root}>
       <div className={styles.top}>
@@ -82,25 +84,27 @@ export default function ManageClients() {
             startIcon={<AttachmentIcon className={styles.sendIcon} size="small" />}
           >
             Shareable Link
-        </Button>
+            </Button>
           <Button
             kind="secondary"
+            onClick={() => setOpenModal(true)}
             className={styles.manageButton}
             startIcon={<AddIcon className={styles.sendIcon} size="small" />}
           >
             Add Client
-        </Button>
+            </Button>
+          <AddClientTemplate open={openModal} callBack={setOpenModal} />
           <Button
             kind="secondary"
             className={styles.manageButton}
             startIcon={<CloudIcon className={styles.sendIcon} size="small" />}
           >
             Add Client
-        </Button>
+            </Button>
         </div>
       </div >
       <div className={styles.main}>
-        <CustomTable rows={rows}/>
+        <CustomTable rows={rows} />
       </div>
     </div>
   );

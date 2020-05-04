@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState }from 'react';
 import PropTypes from 'prop-types';
 import { colors } from "../../data/colors";
 import SearchBar from "../SearchBar/SearchBar";
-import { rem, createBorderTop } from "../../helpers/style";
+import { rem } from "../../helpers/style";
 import { Select, FormControl, InputLabel } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -14,6 +14,8 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Paper from '@material-ui/core/Paper';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import EditClientTemplate from '../EditClientTemplate';
 
 const paddingSides = 28;
 
@@ -82,6 +84,7 @@ function EnhancedTableHead(props) {
             </TableSortLabel>
           </TableCell>
         ))}
+        <TableCell />
       </TableRow>
     </TableHead>
   );
@@ -103,7 +106,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     backgroundColor: colors.white,
     boxShadow: "none",
-    borderTop: createBorderTop(theme),
     borderRadius: 8,
     overflow: "hidden",
   },
@@ -189,8 +191,8 @@ export default function CutomTable(props) {
   };
 
   const isSelected = (name) => selected.indexOf(name) !== -1;
-
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <div className={classes.root}>
@@ -242,6 +244,7 @@ export default function CutomTable(props) {
                       <TableCell align="right">{row.date}</TableCell>
                       <TableCell align="right" className={classes.solution}>{row.solution}</TableCell>
                       <TableCell align="right">{row.learned}</TableCell>
+                      <TableCell align="right"><MoreVertIcon onClick={() => setOpenModal(true)} /></TableCell>
                     </TableRow>
                   );
                 })}
@@ -263,6 +266,7 @@ export default function CutomTable(props) {
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </Paper>
+      <EditClientTemplate open={openModal} callBack={setOpenModal} />
     </div>
   );
 }

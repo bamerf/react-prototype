@@ -5,6 +5,7 @@ import PaletteIcon from "@material-ui/icons/Palette";
 import ToggleOn from "@material-ui/icons/ToggleOn";
 import TrackChanges from "@material-ui/icons/TrackChanges";
 import ShowChart from "@material-ui/icons/ShowChart";
+import Menu from "@material-ui/icons/Menu";
 import TabLinkButton from "../../components/TabLinkButton/TabLinkButton";
 import VerticalLinkButtonGroup from "../../components/VerticalLinkButtonGroup/VerticalLinkButtonGroup";
 
@@ -13,6 +14,7 @@ const navItems = [
   { name: "buttons", Icon: VisibilityIcon },
   { name: "colors", Icon: PaletteIcon },
   { name: "switches", Icon: ToggleOn },
+  { name: "menus", Icon: Menu },
   { name: "progress-circles", Icon: TrackChanges },
   { name: "charts", Icon: ShowChart },
 ];

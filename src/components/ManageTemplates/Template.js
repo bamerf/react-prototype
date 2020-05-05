@@ -1,9 +1,9 @@
 import React from "react";
 import { makeStyles, Typography, Grid, Divider } from "@material-ui/core";
-import { Visibility, Create, Clear } from "@material-ui/icons";
-import Tooltip from "../Tooltip/Tooltip";
+import Button from "../Button/Button";
 import { rem } from "../../helpers/style";
 import { colors } from "../../data/colors";
+import DotMenu from "../DotMenu/DotMenu";
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -17,19 +17,8 @@ const useStyles = makeStyles(
       alignItems: "center",
       marginLeft: rem(44),
     },
-    icon: {
-      textAlign: "end",
-      paddingRight: rem(40),
-      "& svg": {
-        color: colors.gray3,
-      },
-      "& svg:hover": {
-        color: theme.palette.primary.main,
-        transition: "all 300ms ease-out",
-      },
-      "& svg:not(:last-child)": {
-        padding: `0 ${rem(5)}`,
-      },
+    actionsContainer: {
+      display: "flex",
     },
   }),
   { name: "Template" }
@@ -49,20 +38,11 @@ export default function Template({ kind, name, description }) {
         </Grid>
         <Grid item xs={2} className={styles.icon}>
           {kind === "systemTemplate" ? (
-            <Tooltip title="Preview">
-              <Visibility />
-            </Tooltip>
+            <Button kind="secondary">Preview</Button>
           ) : (
-            <div className={styles.iconsContainer}>
-              <Tooltip title="Preview">
-                <Visibility />
-              </Tooltip>
-              <Tooltip title="Edit">
-                <Create />
-              </Tooltip>
-              <Tooltip title="Remove">
-                <Clear />
-              </Tooltip>
+            <div className={styles.actionsContainer}>
+              <Button kind="secondary">Preview</Button>
+              <DotMenu />
             </div>
           )}
         </Grid>

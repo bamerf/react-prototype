@@ -4,7 +4,6 @@ import { ManageClientsIcon } from "../../assets/svg/PartnerPortalIcons";
 import { colors } from "../../data/colors";
 import { rem, createBorderTop } from "../../helpers/style";
 import Button from "../Button/Button";
-import CustomTable from '../CustomTable';
 import { makeStyles } from '@material-ui/core/styles';
 import SearchBar from "../SearchBar/SearchBar";
 import Typography from '@material-ui/core/Typography';
@@ -22,21 +21,89 @@ import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
 import TableSortLabel from "@material-ui/core/TableSortLabel";
 import Paper from "@material-ui/core/Paper";
+import EditClientTemplate from '../EditClientTemplate';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const paddingSides = 28;
 
-const rows = [
+function createData(name, bussines, reseller, date, solution, learned) {
+  return { name, bussines, reseller, date, solution, learned };
+}
 
-  { name: "Graham Chee", bussines: "Knowledge1", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "200 learners" }, 
-  { name: "Graham Chee", bussines: "Knowledge2", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "201 learners" }, 
-  { name: "Graham Chee", bussines: "Knowledge3", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "206 learners" }, 
-  { name: "Graham Chee", bussines: "Knowledge4", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "206 learners" }, 
-  { name: "Graham Chee", bussines: "Knowledge5", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "209 learners" },
-  { name: "Graham Chee", bussines: "Knowledge6", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "223 learners" },
-  { name: "Graham Chee", bussines: "Knowledge7", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "256 learners" },
-  { name: "Graham Chee", bussines: "Knowledge8", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "213 learners" },
-  { name: "Graham Chee", bussines: "Knowledge9", reseller: "BCyber Pty Ltd", date: "24/04/2020", solution: "Free", learned: "211 learners" },
-]
+const rows = [
+  createData(
+    "Graham Chee",
+    "Knowledge1",
+    "BCyber Pty Ltd",
+    "24/04/2020",
+    "Free",
+    "200 learners"
+  ),
+  createData(
+    "Graham Chee",
+    "Knowledge2",
+    "BCyber Pty Ltd",
+    "24/04/2020",
+    "Pro",
+    "202 learners"
+  ),
+  createData(
+    "Graham Chee",
+    "Knowledge3",
+    "BCyber Pty Ltd",
+    "24/04/2020",
+    "Lite",
+    "23 learners"
+  ),
+  createData(
+    "Graham Chee",
+    "Knowledge4",
+    "BCyber Pty Ltd",
+    "24/04/2020",
+    "Pro",
+    "223 learners"
+  ),
+  createData(
+    "Graham Chee",
+    "Knowledge5",
+    "BCyber Pty Ltd",
+    "24/04/2020",
+    "Pro",
+    "400 learners"
+  ),
+  createData(
+    "Graham Chee",
+    "Knowledge6",
+    "BCyber Pty Ltd",
+    "24/04/2020",
+    "Free",
+    "200 learners"
+  ),
+  createData(
+    "Graham Chee",
+    "Knowledge7",
+    "BCyber Pty Ltd",
+    "24/04/2020",
+    "Pro",
+    "200 learners"
+  ),
+  createData(
+    "Graham Chee",
+    "Knowledge8",
+    "BCyber Pty Ltd",
+    "24/04/2020",
+    "Pro",
+    "200 learners"
+  ),
+  createData(
+    "Graham Chee",
+    "Knowledge9",
+    "BCyber Pty Ltd",
+    "24/04/2020",
+    "Pro",
+    "200 learners"
+  ),
+];
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -109,6 +176,7 @@ function EnhancedTableHead(props) {
             </TableSortLabel>
           </TableCell>
         ))}
+        <TableCell />
       </TableRow>
     </TableHead>
   );
@@ -142,6 +210,14 @@ const useStyles = makeStyles((theme) => ({
   },
   main: {
     padding: rem(paddingSides),
+  },
+  tableTop: {
+    paddingTop: rem(paddingSides),
+    paddingBottom: rem(paddingSides),
+  },
+  tableHeader: {
+    color: "red",
+    background: "#F2F2F2",
   },
   manageTitle: {
     display: "flex",
@@ -243,19 +319,20 @@ export default function ManageClients() {
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
-
   return (
-    <div className={styles.root}>
-      <div className={styles.top}>
-        <div className={styles.manageTitle}>
-          <ManageClientsIcon className={styles.manageIcon} />
+    <div className={classes.root}>
+      <div className={classes.top}>
+        <div className={classes.manageTitle}>
+          <ManageClientsIcon className={classes.manageIcon} />
           <Typography variant="h4">Manage Clients</Typography>
         </div>
-        <div className={styles.buttonsWrapper}>
+        <div className={classes.buttonsWrapper}>
           <Button
             kind="secondary"
-            className={styles.manageButton}
-            startIcon={<AttachmentIcon className={styles.sendIcon} size="small" />}
+            className={classes.manageButton}
+            startIcon={
+              <AttachmentIcon className={classes.sendIcon} size="small" />
+            }
           >
             Shareable Link
           </Button>
@@ -270,16 +347,12 @@ export default function ManageClients() {
           <AddClientTemplate open={openModal} callBack={setOpenModal} />
           <Button
             kind="secondary"
-            className={styles.manageButton}
-            startIcon={<CloudIcon className={styles.sendIcon} size="small" />}
+            className={classes.manageButton}
+            startIcon={<CloudIcon className={classes.sendIcon} size="small" />}
           >
             Add Client
           </Button>
         </div>
-
-      </div >
-      <div className={styles.main}>
-        <CustomTable rows={rows} />
       </div>
       <div className={classes.main}>
         <Paper className={classes.paper}>
@@ -338,6 +411,7 @@ export default function ManageClients() {
                           {row.solution}
                         </TableCell>
                         <TableCell align="right">{row.learned}</TableCell>
+                        <TableCell align="right"><MoreVertIcon onClick={() => setOpenModal(true)}/></TableCell>
                       </TableRow>
                     );
                   })}
@@ -360,6 +434,7 @@ export default function ManageClients() {
           />
         </Paper>
       </div>
+      <EditClientTemplate open={openModal} callBack={setOpenModal} />
     </div>
   );
 }

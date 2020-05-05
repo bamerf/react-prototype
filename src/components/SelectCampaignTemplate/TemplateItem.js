@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles, Typography, Grid, Divider } from "@material-ui/core";
-import Button from "../Button/Button";
 import RatingCircles from "../RatingCircles/RatingCircles";
 import { rem } from "../../helpers/style";
 
@@ -22,13 +21,13 @@ const useStyles = makeStyles(
       paddingBottom: rem(5),
     },
     rightSection: {
+      height: "100%",
       display: "flex",
-      marginTop: rem(5),
       justifyContent: "space-between",
       alignItems: "center",
     },
     button: {
-      marginRight: rem(15),
+      display: "flex",
     },
   }),
   {
@@ -36,7 +35,7 @@ const useStyles = makeStyles(
   }
 );
 
-export default function TemplateItem({ rating, title, description }) {
+export default function TemplateItem({ rating, title, description, children }) {
   const styles = useStyles();
   return (
     <div className={styles.root}>
@@ -52,9 +51,7 @@ export default function TemplateItem({ rating, title, description }) {
         <Grid item xs={4}>
           <div className={styles.rightSection}>
             <RatingCircles rating={rating} />
-            <Button className={styles.button} thick={true} kind="primary">
-              Select
-            </Button>
+            <div className={styles.button}>{children}</div>
           </div>
         </Grid>
       </Grid>

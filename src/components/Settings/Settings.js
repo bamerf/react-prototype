@@ -7,6 +7,7 @@ import {
   Paper,
   Divider,
 } from "@material-ui/core";
+import { Settings as SettingsIcon } from "@material-ui/icons";
 import Button from "../Button/Button";
 import InputLabel from "../InputLabel/InputLabel";
 import { rem } from "../../helpers/style";
@@ -22,7 +23,16 @@ const useStyles = makeStyles(
       marginBottom: rem(40),
     },
     header: {
+      display: "flex",
+      alignItems: "center",
       padding: `${rem(20)} ${rem(30)}`,
+    },
+    title: {
+      display: "flex",
+    },
+    icon: {
+      color: theme.palette.primary.main,
+      marginRight: rem(24),
     },
     content: {
       paddingTop: rem(20),
@@ -66,6 +76,7 @@ export default function Settings() {
   return (
     <Paper className={styles.container} elevation={3} variant="outlines">
       <div className={styles.header}>
+        <SettingsIcon className={styles.icon} />
         <Typography variant="h4">Global Settings</Typography>
       </div>
       <Divider />

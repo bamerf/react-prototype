@@ -3,7 +3,7 @@ import ModalWindow from "../Modals/ModalWindow";
 import SwitchItem from "./SwitchItem";
 import SelectItem from "./SelectItem";
 import Expansion from "../Expansion/Expansion";
-
+import { colors } from "../../data/colors";
 import { Typography } from "@material-ui/core";
 import Button from "../Button/Button";
 import { makeStyles } from "@material-ui/core/styles";

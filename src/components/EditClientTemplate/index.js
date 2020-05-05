@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import Button from "../Button/Button";
 import { makeStyles } from '@material-ui/core/styles';
+import { rem } from "../../helpers/style";
 
 const useStyles = makeStyles((theme) => ({
   btnWrapper: {
@@ -18,13 +19,14 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "60px"
   },
   expansionTitle: {
-    color: "#F2F2F2",
+    color: colors.gray6,
   },
   green: {
-    color: "#84CD15"
+    marginLeft: rem(4),
+    color: theme.palette.primary.main
   },
   black: {
-    color: "black"
+    color: colors.black
   }
 }));
 

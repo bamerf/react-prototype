@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tableHeader: {
     color: "red",
-    background: "#F2F2F2",
+    background: colors.gray6,
   },
   paper: {
     width: '100%',
@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 750,
   },
   solution: {
-    color: "#84CD15",
+    color: theme.palette.primary.main,
   },
   visuallyHidden: {
     border: 0,

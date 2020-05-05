@@ -27,10 +27,10 @@ const useStyles = makeStyles(
     input: {
       border: "1px solid #E0E0E0",
       boxSizing: "border-box",
-      borderRadius: "4px",
-      padding: "13px 20px",
-      width: "85px",
-      height: "40px",
+      borderRadius: 4,
+      padding: `${rem(13)} ${rem(20)}`,
+      width: rem(85),
+      height: rem(50),
     }
   }),
   {
@@ -52,9 +52,7 @@ export default function SelectItem({ title, description }) {
           </div>
         </Grid>
         <div className={styles.inputWrapper}>
-          <span className={styles.input}>
-            50
-        </span>
+          <input type="text" className={styles.input} value="50" />
         </div>
       </Grid>
       <Divider />

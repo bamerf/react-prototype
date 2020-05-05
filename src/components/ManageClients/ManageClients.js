@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import { ManageClientsIcon } from "../../assets/svg/PartnerPortalIcons";
 import { colors } from "../../data/colors";
-import SearchBar from "../SearchBar/SearchBar";
 import { rem, createBorderTop } from "../../helpers/style";
+import Button from "../Button/Button";
+import { makeStyles } from '@material-ui/core/styles';
+import SearchBar from "../SearchBar/SearchBar";
+import Typography from '@material-ui/core/Typography';
+import AddClientTemplate from "../AddClientTemplate";
 import AttachmentIcon from "@material-ui/icons/Attachment";
 import AddIcon from "@material-ui/icons/Add";
 import CloudIcon from "@material-ui/icons/Cloud";
-import { Button, Select, FormControl, InputLabel } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Select, FormControl, InputLabel } from "@material-ui/core";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -17,8 +20,9 @@ import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
 import TableSortLabel from "@material-ui/core/TableSortLabel";
-import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
+import EditClientTemplate from '../EditClientTemplate';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const paddingSides = 28;
 
@@ -172,6 +176,7 @@ function EnhancedTableHead(props) {
             </TableSortLabel>
           </TableCell>
         ))}
+        <TableCell />
       </TableRow>
     </TableHead>
   );
@@ -261,9 +266,11 @@ const useStyles = makeStyles((theme) => ({
     top: 20,
     width: 1,
   },
-}));
+})); 
 
 export default function ManageClients() {
+  const styles = useStyles();
+  const [openModal, setOpenModal] = useState(false);
   const classes = useStyles();
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
@@ -331,11 +338,13 @@ export default function ManageClients() {
           </Button>
           <Button
             kind="secondary"
-            className={classes.manageButton}
-            startIcon={<AddIcon className={classes.sendIcon} size="small" />}
+            onClick={() => setOpenModal(true)}
+            className={styles.manageButton}
+            startIcon={<AddIcon className={styles.sendIcon} size="small" />}
           >
             Add Client
-          </Button>
+            </Button>
+          <AddClientTemplate open={openModal} callBack={setOpenModal} />
           <Button
             kind="secondary"
             className={classes.manageButton}
@@ -402,6 +411,7 @@ export default function ManageClients() {
                           {row.solution}
                         </TableCell>
                         <TableCell align="right">{row.learned}</TableCell>
+                        <TableCell align="right"><MoreVertIcon onClick={() => setOpenModal(true)}/></TableCell>
                       </TableRow>
                     );
                   })}
@@ -424,6 +434,7 @@ export default function ManageClients() {
           />
         </Paper>
       </div>
+      <EditClientTemplate open={openModal} callBack={setOpenModal} />
     </div>
   );
 }

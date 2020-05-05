@@ -15,8 +15,10 @@ export default function Home() {
       <Button onClick={logout}>Logout</Button>
       <br />
       <Link to="/phishing-simulations">Phishing Simulations</Link>
-      <br/>
+      <br />
       <Link to="/partner-portal">Partner Portal</Link>
+      <br />
+      <Link to="/styleguide">Style Guide</Link>
     </Page>
   );
 }

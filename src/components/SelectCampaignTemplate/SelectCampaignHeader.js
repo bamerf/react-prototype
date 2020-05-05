@@ -51,7 +51,7 @@ export default function SelectCampaignHeader() {
           label="Difficulty"
         ></Select>
       </FormControl>
-      <SearchBar />
+      <SearchBar placeholder="Search templates..." />
     </div>
   );
 }

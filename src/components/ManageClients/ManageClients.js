@@ -165,7 +165,6 @@ function EnhancedTableHead(props) {
               active={orderBy === headCell.id}
               direction={orderBy === headCell.id ? order : "asc"}
               onClick={createSortHandler(headCell.id)}
-              // Iconcomponet={AddIcon}
             >
               {headCell.label}
               {orderBy === headCell.id ? (
@@ -217,7 +216,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tableHeader: {
     color: "red",
-    background: "#F2F2F2",
+    background: colors.gray6,
   },
   manageTitle: {
     display: "flex",
@@ -232,13 +231,14 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid #E0E0E0",
     boxSizing: "border-box",
     borderRadius: 4,
-    padding: "11px 19px",
+    padding: `${rem(13)} ${rem(20)}`,
     "& svg": {
       color: theme.palette.primary.main,
     },
   },
   manageIcon: {
-    paddingRight: 25,
+    color: theme.palette.primary.main,
+    marginRight: rem(24),
   },
   select: {
     minWidth: rem(180),
@@ -253,7 +253,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 750,
   },
   solution: {
-    color: "#84CD15",
+    color: theme.palette.primary.main,
   },
   visuallyHidden: {
     border: 0,
@@ -266,7 +266,10 @@ const useStyles = makeStyles((theme) => ({
     top: 20,
     width: 1,
   },
-})); 
+  moreVertIcon: {
+    cursor: "pointer",
+  }
+}));
 
 export default function ManageClients() {
   const styles = useStyles();
@@ -394,7 +397,7 @@ export default function ManageClients() {
                         aria-checked={isItemSelected}
                         tabIndex={-1}
                         key={row.name}
-                        // selected={isItemSelected}
+                      // selected={isItemSelected}
                       >
                         <TableCell
                           component="th"
@@ -411,7 +414,7 @@ export default function ManageClients() {
                           {row.solution}
                         </TableCell>
                         <TableCell align="right">{row.learned}</TableCell>
-                        <TableCell align="right"><MoreVertIcon onClick={() => setOpenModal(true)}/></TableCell>
+                        <TableCell align="right" className={classes.moreVertIcon}><MoreVertIcon onClick={() => setOpenModal(true)} /></TableCell>
                       </TableRow>
                     );
                   })}

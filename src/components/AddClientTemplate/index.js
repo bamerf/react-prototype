@@ -66,7 +66,7 @@ export default function AddClientTemplate({ open, callBack }) {
               <Select
                 variant="outlined"
                 fullWidth
-                placeholder="Selct Question set"
+                placeholder="Select Question set"
               ></Select>
             </InputLabel>
           </Grid>

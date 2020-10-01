@@ -23,6 +23,7 @@ export const Routes = () => {
     <Switch>
       <Route path="/styleguide" component={StyleGuide} />
       <Route path="/home" component={Home} />
+      <Route path="/login" component={Login} />
       <Route path="/phishing-simulations" component={PhishingSimulations} />
       <Route path="/partner-portal" component={PartnerPortal} />
       <Redirect to="/home" />

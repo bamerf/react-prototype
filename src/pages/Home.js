@@ -14,9 +14,11 @@ export default function Home() {
       </Typography>
       <Button onClick={logout}>Logout</Button>
       <br />
-      <Link to="/phishing-simulations">Phishing Simulations</Link>
+      <Link to="/login">Login Page</Link>
       <br />
-      <Link to="/partner-portal">Partner Portal</Link>
+      <Link to="/phishing-simulations">Page 1</Link>
+      <br />
+      <Link to="/partner-portal">Page 2</Link>
       <br />
       <Link to="/styleguide">Style Guide</Link>
     </Page>

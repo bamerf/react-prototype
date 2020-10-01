@@ -39,20 +39,20 @@ const useStyles = makeStyles(
       textDecoration: "none",
     },
   },
-  { name: "AddCampainCard" }
+  { name: "AddItemCard" }
 );
 
-export default function AddCampaignCard({ className }) {
+export default function AddItemCard({ className }) {
   const styles = useStyles();
   return (
     <div className={classnames(styles.root)}>
-      <Link to="/phishing-simulations/add-campaign" className={styles.link}>
+      <Link to="/phishing-simulations/add-item" className={styles.link}>
         <Button
           kind="primary"
           className={styles.button}
           startIcon={<AddIcon className={styles.icon} size="large" />}
         >
-          Add Campaign
+          Add Item
         </Button>
       </Link>
     </div>

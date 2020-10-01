@@ -87,7 +87,7 @@ export default function Chart({ data }) {
           />
 
           <Bar
-            dataKey="Trained"
+            dataKey="Done"
             label={{ fill: colors.white, fontSize: 13 }}
             stackId="a"
             barSize={80}
@@ -95,7 +95,7 @@ export default function Chart({ data }) {
             yAxisId="left"
           />
           <Bar
-            dataKey="Opened"
+            dataKey="Pending"
             label={{ fill: colors.gray3, fontSize: 13 }}
             stackId="a"
             fill={fade(theme.palette.primary.light, 0.5)}

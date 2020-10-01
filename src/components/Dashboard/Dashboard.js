@@ -2,56 +2,56 @@ import React from "react";
 import { makeStyles } from "@material-ui/core";
 import CampaignActivity from "../CampaignActivity/CampaignActivity";
 import Chart from "../Chart/Chart";
-import AddCampaignCard from "../AddCampaign/AddCampaignCard";
+import AddItemCard from "../AddItem/AddItemCard";
 
 const data = [
   {
     date: "01/07",
     Risk: 4,
-    Trained: 1,
-    Opened: 1,
+    Done: 1,
+    Pending: 1,
     Sent: 2,
   },
   {
     date: "02/06",
     Risk: 0,
-    Trained: 0,
-    Opened: 2,
+    Done: 0,
+    Pending: 2,
     Sent: 2,
   },
   {
     date: "06/09",
     Risk: 4,
-    Trained: 1,
-    Opened: 1,
+    Done: 1,
+    Pending: 1,
     Sent: 2,
   },
   {
     date: "12/09",
     Risk: 0,
-    Trained: 1,
-    Opened: 2,
+    Done: 1,
+    Pending: 2,
     Sent: 3,
   },
   {
     date: "04/10",
     Risk: 0,
-    Trained: 0,
-    Opened: 1,
+    Done: 0,
+    Pending: 1,
     Sent: 1,
   },
   {
     date: "07/11",
     Risk: 8,
-    Trained: 3,
-    Opened: 3,
+    Done: 3,
+    Pending: 3,
     Sent: 4,
   },
   {
     date: "31/01",
     Risk: 28,
-    Trained: 2,
-    Opened: 2,
+    Done: 2,
+    Pending: 2,
     Sent: 4,
   },
 ];
@@ -72,23 +72,23 @@ export default function Campaigns() {
       <Chart data={data} />
       <CampaignActivity
         className={styles.campaignActivity}
-        title="Dropbox - File shared"
-        subject="Jonathan Horne - Dropbox shared file"
-        fromAdress="Jonathan Horne"
+        title="Sample Test - Item Sent"
+        subject="Foo Bar - Item Shared"
+        fromAdress="foo@bar.com"
         sendingGroup="Default (All users)"
         type="completed"
         dateCompleted={new Date()}
         percentCompleted={12}
         percentAtRisk={12}
         delivered={13}
-        percentOpened={75}
-        percentTrained={36}
+        percentPending={75}
+        percentDone={36}
       />
       <CampaignActivity
         className={styles.campaignActivity}
-        title="Office 365 - Mailbox over quota"
-        subject="Office 365 - Mailbox over quota"
-        fromAdress="Microsoft <support@offic-email.com.au>"
+        title="Sample Test II - Item Shared"
+        subject="Brian Smith - Item Shared"
+        fromAdress="Google <support@google.com>"
         sendingGroup="Default (All users)"
         type="scheduled"
         dateScheduled={new Date()}
@@ -96,7 +96,7 @@ export default function Campaigns() {
         duration="All at once"
         enrolment="Active"
       />
-      <AddCampaignCard className={styles.campaignActivity} />
+      <AddItemCard className={styles.campaignActivity} />
     </div>
   );
 }

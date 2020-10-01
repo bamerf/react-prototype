@@ -45,14 +45,12 @@ export default function Banner() {
     <div className={styles.root}>
       <div className={styles.textRoot}>
         <Typography className={styles.title} variant="h3">
-          Welcome to <Bold text="Phishing Simulations" variant="h3" />
+          Welcome to <Bold text="Dashboard" variant="h3" />
         </Typography>
         <Typography className={styles.description} variant="body2">
-          Below is a summary of phishing campaigns that our team has put
-          together, to match your particular needs.
+          Lorem ipsum dolor. Voluptatibus, dicta omnis officia voluptate iste eius nobis similique nisi exercitationem, quaerat ipsum?
           <br />
-          Each campaign will be sent on the scheduled date. The results will
-          then be available within 24 hours.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </Typography>
       </div>
       <div className={styles.bannerWomanContainer}>

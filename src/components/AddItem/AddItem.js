@@ -113,7 +113,7 @@ export default function AddCampaign() {
               onClick={() => setOpenModal(true)}
               startIcon={<InsertDriveFileIcon color="primary" />}
             >
-              Select campaign template
+              Select Template
             </Button>
             <SelectCampaingTemplate open={openModal} callBack={setOpenModal} />
           </GrayArea>
@@ -127,7 +127,7 @@ export default function AddCampaign() {
           <div className={styles.emailDetails}>
             <Grid container spacing={3}>
               <Grid item xs={4}>
-                <InputLabel label="Send campaign date">
+                <InputLabel label="Send date">
                   <Select
                     variant="outlined"
                     fullWidth
@@ -262,7 +262,7 @@ export default function AddCampaign() {
             <Button thick={true} kind="secondary">
               Cancel
             </Button>
-            <Button thick={true}>Save campaign</Button>
+            <Button thick={true}>Save template</Button>
           </div>
         </div>
       </div>

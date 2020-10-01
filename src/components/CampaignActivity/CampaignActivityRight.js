@@ -152,13 +152,13 @@ export default function CampaignActivityRight(props) {
             <div className={styles.mainRightCompletedContent}>
               <TextCircle text={props.delivered.toString()} title="Delivered" />
               <PercentCircle
-                percentage={props.percentOpened}
-                title="Opened"
+                percentage={props.percentPending}
+                title="Pending"
                 light
               />
               <PercentCircle
-                percentage={props.percentTrained}
-                title="Trained"
+                percentage={props.percentDone}
+                title="Done"
               />
             </div>
           ) : (
@@ -197,7 +197,7 @@ export default function CampaignActivityRight(props) {
               className={styles.bottomButton}
               startIcon={<SendIcon className={styles.sendIcon} size="small" />}
             >
-              Send test email
+              Send Email
             </Button>
           </div>
         </>

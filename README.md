@@ -4,4 +4,4 @@ This is a project example built for a client using `react` and `material UI` by 
 
 If you refresh the page the app will load a new `theme` every time. The theme will pass down to all the components and pages.
 
-Visit the hosted version 👉 [here](www.test.com)
+Visit the hosted version 👉 [here](https://react-prototype.vercel.app/)

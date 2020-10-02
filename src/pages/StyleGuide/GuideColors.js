@@ -1,11 +1,11 @@
 import React from "react";
-import { Grid, makeStyles } from "@material-ui/core";
+import { Grid, makeStyles, Typography } from "@material-ui/core";
 import { colors } from "../../data/colors";
 
 const useStyles = makeStyles(
   {
     colorTitle: {
-      marginBottom: 0,
+      marginBottom: 5,
       textAlign: "center",
     },
     colorDisplay: {
@@ -19,7 +19,7 @@ const colorNames = Object.keys(colors);
 
 const Color = ({ name, styles }) => (
   <Grid item xs={6} md={3}>
-    <h3 className={styles.colorTitle}>{name}</h3>
+  <Typography variant="h6" className={styles.colorTitle}>{name}</Typography>
     <div
       className={styles.colorDisplay}
       style={{ backgroundColor: colors[name] }}

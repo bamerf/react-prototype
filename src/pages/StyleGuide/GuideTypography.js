@@ -8,7 +8,8 @@ import {
 const useStyles = makeStyles(
   {
     itemTitle: {
-      marginBottom: 0,
+      marginBottom: 5,
+      marginTop: 15
     },
     paper: {
       padding: 12,
@@ -40,7 +41,9 @@ export default function Typography() {
     <div>
       {variants.map((variant) => (
         <div key={variant}>
-          <h2 className={styles.itemTitle}>{variant}</h2>
+          <MuiTypography variant="h6" className={styles.itemTitle}>
+          {variant}
+            </MuiTypography>
           <Paper className={styles.paper}>
             <MuiTypography variant={variant}>
               The quick brown cat jumped over the lazy dog.

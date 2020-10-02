@@ -1,6 +1,13 @@
 import React from "react";
-import brandLady from "../../assets/images/brandLady.png";
+import { LoginImage } from "../../assets/svg/LoginImage";
+import { useTheme } from "@material-ui/core/styles";
 
 export default function LoginLady() {
-  return <img src={brandLady} alt="brand lady" style={{ width: "100%" }} />;
+  // const styles = useStyles();
+  const theme = useTheme();
+  return (
+    <div >
+      <LoginImage color={theme.palette.primary.main} />
+    </div>
+  );
 }

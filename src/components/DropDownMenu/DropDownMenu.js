@@ -54,7 +54,7 @@ const useStyles = makeStyles(
       position: "absolute",
       padding: `${rem(8)} 0`,
       boxShadow: boxShadowOn,
-      top: rem(65),
+      top: rem(30),
       zIndex: 2,
       backgroundColor: fade(colors.white, 1),
       borderRadius: 5,
@@ -101,7 +101,7 @@ export default function DropDownMenu(props) {
   return (
     <div className={styles.menuParent} onMouseEnter={hoverOn}>
       {props.path === "Awareness posters" ? (
-        <div className={styles.linkParent}>
+        <div className={styles.linkParent} >
           <Typography
             variant="body2"
             className={classname(styles.link, styles.lonelyLink)}

@@ -1,12 +1,12 @@
 import React from "react";
 import { Typography, makeStyles, Container } from "@material-ui/core";
-import BrandLogo from "../../components/BrandAssests/BrandLogo";
+// import BrandLogo from "../../components/BrandAssests/BrandLogo";
 import LoginLady from "../../components/BrandAssests/LoginLady";
 import LoginForm from "./LoginForm";
 import LoginFooter from "../Login/LoginFooter";
 import Page from "../../components/Page/Page";
 import { rem } from "../../helpers/style";
-
+import NavBar from '../../components/Nav/NavBar'
 const useStyles = makeStyles(
   {
     page: {
@@ -30,10 +30,10 @@ const useStyles = makeStyles(
       marginLeft: rem(88),
     },
     brandWomanContainer: {
-      width: rem(800),
+      width: rem(600),
       position: "absolute",
       top: rem(60),
-      right: rem(36),
+      right: rem(60),
       zIndex: 0,
     },
     leftSection: {
@@ -49,14 +49,14 @@ export default function Login() {
 
   return (
     <Page className={styles.page}>
+      <NavBar/>
       <Container className={styles.container}>
         <div className={styles.leftSection}>
-          <BrandLogo className={styles.brandLogo} />
+          {/* <BrandLogo className={styles.brandLogo} /> */}
           <Typography variant="h2" className={styles.welcome}>
             Welcome to{" "}
             <span>
-              Cyber Aware <br />
-              Security Portal
+              React Prototype <br />
             </span>
           </Typography>
           <LoginForm />

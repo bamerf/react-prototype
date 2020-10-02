@@ -1,5 +1,5 @@
 import React from "react";
-import BannerMan from "../BrandAssests/BannerMan";
+// import BannerMan from "../BrandAssests/BannerMan";
 import { Typography, makeStyles } from "@material-ui/core";
 import Bold from "../Bold/Bold";
 import { colors } from "../../data/colors";
@@ -45,18 +45,18 @@ export default function Banner() {
     <div className={styles.root}>
       <div className={styles.textRoot}>
         <Typography className={styles.title} variant="h3">
-          <Bold text="Partner Portal" variant="h3" />
+          <Bold text="Second Portal" variant="h3" />
         </Typography>
         <Typography className={styles.description} variant="body2">
-          Welcome to the Cyber Aware partner portal. Here you can create and manage client accounts and access
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
           <br />
-          partner resources. If you have any questions pleasse reach out to our support team on 1300 29 29 67 or at
+          Eveniet itaque omnis blanditiis!
           <br />
-          support@cyberaware.com
+          Corrupti veniam similique impedit.
         </Typography>
       </div>
       <div className={styles.bannerManContainer}>
-        <BannerMan className={styles.man} />
+        {/* <BannerMan className={styles.man} /> */}
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { colors } from "./data/colors";
+// import { colors } from "./data/colors";
 import {
   createMuiTheme,
   ThemeProvider,
@@ -26,7 +26,8 @@ const useStyles = makeStyles(
 function App() {
   const styles = useStyles();
   // const brandColor = "#009ae4";
-  const brandColor = "";
+  const colors = ["#009ae4", "#84cd15", "#eb5757", "#f2c94c", "#8A2BE2", "#FF7F50","#9932CC", "#FF1493", "#40E0D0"]
+  const brandColor = colors[Math.floor(Math.random() * colors.length)];
   const brandRequestSuccess = true;
 
   // Theme options are set in theme.js
@@ -35,7 +36,7 @@ function App() {
       ...globalThemeOptions,
       palette: {
         primary: {
-          main: brandColor || colors.lime,
+          main: brandColor,
         },
       },
     });

@@ -1,5 +1,5 @@
 import React from "react";
-import BannerWoman from "../BrandAssests/BannerWoman";
+// import BannerWoman from "../BrandAssests/BannerWoman";
 import { Typography, makeStyles } from "@material-ui/core";
 import Bold from "../Bold/Bold";
 import { colors } from "../../data/colors";
@@ -54,7 +54,7 @@ export default function Banner() {
         </Typography>
       </div>
       <div className={styles.bannerWomanContainer}>
-        <BannerWoman className={styles.woman} />
+        {/* <BannerWoman className={styles.woman} /> */}
       </div>
     </div>
   );

@@ -7,30 +7,30 @@ export default function LoginFooter() {
   return (
     <div css={styles.footerParent}>
       <a
-        target="_blank"
+        // target="_blank"
         rel="noopener noreferrer"
-        href="https://cyberaware.com/"
+        href="/login"
         css={styles.footerLink}
       >
         Risk Assessment & Reporting
       </a>
       <span css={styles.footerLinkSpacer}>|</span>
       <a
-        target="_blank"
+        // target="_blank"
         rel="noopener noreferrer"
-        href="https://cyberaware.com/"
+        href="/login"
         css={styles.footerLink}
       >
         Awareness Training & Phishing
       </a>
       <span css={styles.footerLinkSpacer}>|</span>
       <a
-        target="_blank"
+        // target="_blank"
         rel="noopener noreferrer"
-        href="https://cyberaware.com/"
+        href="/login"
         css={styles.footerLink}
       >
-        Cyber Awareness Material
+        Company Material
       </a>
     </div>
   );
@@ -38,9 +38,9 @@ export default function LoginFooter() {
 
 const styles = {
   footerParent: css`
-    margin-bottom: ${rem(127)};
+    margin-bottom: ${rem(20)};
     margin-left: ${rem(88)};
-    margin-top: ${rem(98)};
+    margin-top: ${rem(50)};
   `,
   footerLink: css`
     color: ${colors.gray3};

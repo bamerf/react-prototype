@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   },
   halfCircle: {
     height: rem(150),
-    backgroundColor: colors.white,
+    backgroundColor: colors.backgroundGray,
   },
 });
 

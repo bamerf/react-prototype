@@ -49,7 +49,7 @@ const useStyles = makeStyles(
     halfCircle: {
       width: rem(100),
       height: rem(53),
-      backgroundColor: colors.white,
+      backgroundColor: colors.backgroundGray,
       borderBottomLeftRadius: rem(90),
       borderBottomRightRadius: rem(90),
       position: "absolute",
